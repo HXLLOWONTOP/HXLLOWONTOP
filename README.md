@@ -556,7 +556,7 @@ end)
 
 
 
-easy:NewButton("RGB", "MAKES THE GAME HAVE COLOR FOR RAGE MODE", function()
+easy:NewButton("Ambient", "MAKES THE GAME HAVE COLOR FOR RAGE MODE", function()
 if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
@@ -599,8 +599,8 @@ sbox.SkyboxRt = "http://www.roblox.com/asset/?id=271042467"
 sbox.SkyboxUp = "http://www.roblox.com/asset/?id=271077958"
 lighting.Ambient = Color3.fromRGB(185, 0, 185)
 lighting.FogColor = Color3.fromRGB(185, 0, 185)
-lighting.ClockTime = 3
-lighting.FogEnd = 99
+lighting.ClockTime = 2
+lighting.FogEnd = 1000
 for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
     if v:IsA("BasePart") and v.Material == Enum.Material.Neon then
         v.Transparency = 0.1
