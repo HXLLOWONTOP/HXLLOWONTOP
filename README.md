@@ -1,7 +1,7 @@
 --idc if you look at my shit code your a fucking skid if you steal it so yeah fuck you shoutout my nigga nammeed veno
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("NASA.EXE (veno on top) - Beta", "Midnight")
+local Window = Library.CreateLib("NASA.EXE (veno on top) https://discord.gg/eeu2wWv2 - Beta", "Midnight")
 
 
 --MAIN--
