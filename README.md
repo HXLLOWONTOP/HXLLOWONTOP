@@ -96,7 +96,7 @@ local Settings = {
  
 local SelectedPart = "LowerTorso"
 local Prediction = true
-local PredictionValue = .1204327
+local PredictionValue = .12097233
  
  
     local AnchorCount = 0
@@ -105,7 +105,7 @@ local PredictionValue = .1204327
     local CC = game:GetService"Workspace".CurrentCamera
     local Plr;
     local enabled = false
-    local accomidationfactor = .1204327
+    local accomidationfactor = .12097233
     local mouse = game.Players.LocalPlayer:GetMouse()
     local placemarker = Instance.new("Part", game.Workspace)
  
@@ -242,25 +242,25 @@ local PredictionValue = .1204327
              split = string.split(pingvalue,'(')
              ping = tonumber(split[1])
             if ping < 130 then
-                PredictionValue = .1204327
+                PredictionValue = .12097233
             elseif ping < 125 then
-                PredictionValue = .1204327
+                PredictionValue = .12097233
             elseif ping < 110 then
-                PredictionValue = .1204327
+                PredictionValue = .12097233
             elseif ping < 105 then
-                PredictionValue = .1204327
+                PredictionValue = .12097233
             elseif ping < 90 then
-                PredictionValue = .1204327
+                PredictionValue = .12097233
             elseif ping < 80 then
-                PredictionValue = .1204327
+                PredictionValue = .12097233
             elseif ping < 70 then
-                PredictionValue = .1204327
+                PredictionValue = .12097233
             elseif ping < 60 then
-                PredictionValue = .1204327
+                PredictionValue = .12097233
             elseif ping < 50 then
-                PredictionValue = .1204327
+                PredictionValue = .12097233
             elseif ping < 40 then
-                PredictionValue = .1204327
+                PredictionValue = .12097233
             end
         end
     end)
