@@ -27,7 +27,8 @@ local EASY = Window:NewTab("more")
 local easy = EASY:NewSection("MORE SUTFF HERE")
 
 
-
+local COOL = Window:NewTab("credits")
+local cool = COOL:NewSection("CREDITS TO WHITEMOON AND VENO!")
 
 
 
