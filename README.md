@@ -23,6 +23,10 @@ local PLAYER = Window:NewTab("player")
 local player = PLAYER:NewSection("PLAYER")
 
 
+local FUN = Window:NewTab("fun stuff!")
+local fun = FUN:NewSection("FUN STUFF!!!")
+
+
 local EASY = Window:NewTab("more")
 local easy = EASY:NewSection("MORE SUTFF HERE")
 
@@ -1392,5 +1396,107 @@ end
 
 
 
+--UPDATES HERE--
 
+fun:NewButton("Reach", "makes your fist or knife have reach", function()
+  game:GetService('RunService'):BindToRenderStep("Reach", 0 , function(value)
+                local success, err = pcall(function()
+                    if game.Players.LocalPlayer.Character.BodyEffects.Attacking.Value == true then
+                        for i,v in pairs(game:GetService('Players'):GetChildren()) do
+                            if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.LeftHand.Position).Magnitude <= 50 then
+                                if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then
+                                    if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChild('Handle') then
+                                        firetouchinterest(game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Handle, v.Character.UpperTorso, 0)
+                                    else
+                                        firetouchinterest(game.Players.LocalPlayer.Character['RightHand'], v.Character.UpperTorso, 0)
+                                        firetouchinterest(game.Players.LocalPlayer.Character['LeftHand'], v.Character.UpperTorso, 0)
+                                        firetouchinterest(game.Players.LocalPlayer.Character['RightFoot'], v.Character.UpperTorso, 0)
+                                        firetouchinterest(game.Players.LocalPlayer.Character['LeftFoot'], v.Character.UpperTorso, 0)
+                                        firetouchinterest(game.Players.LocalPlayer.Character['RightLowerLeg'], v.Character.UpperTorso, 0)
+                                        firetouchinterest(game.Players.LocalPlayer.Character['LeftLowerLeg'], v.Character.UpperTorso, 0)
+                                    end
+                                end
+                            end
+                        end
+                    end
+                    end)
+                end)
+		end)
+
+fun:NewButton("FreeFist keybind B", "makes you have reach on your fists so you can punch from any distance!", function()
+-- // Variables
+	local localPlayer       = game:GetService("Players").LocalPlayer
+	local localCharacter    = localPlayer.Character
+	local Mouse             = localPlayer:GetMouse()
+	local FistControl       = false
+	local LeftFist          = localCharacter.LeftHand
+	local RightFist         = localCharacter.RightHand
+
+	-- // Services
+	local uis = game:GetService("UserInputService")
+
+	-- // Coroutine Loop + Functions
+	local loopFunction = function()
+		LeftFist.CFrame  = CFrame.new(Mouse.Hit.p)
+		RightFist.CFrame = CFrame.new(Mouse.Hit.p)
+	end
+
+	local Loop
+
+	local Start = function()
+		Loop = game:GetService("RunService").Heartbeat:Connect(loopFunction)
+	end
+
+	local Pause = function()
+		Loop:Disconnect()
+	end
+
+	-- // Hotkeys
+	uis.InputBegan:connect(function(Key)
+		if (Key.KeyCode == Enum.KeyCode.B) then
+			if (FistControl == false) then
+				FistControl = true
+				Start()
+				pcall(function()
+					localCharacter.RightHand.RightWrist:Remove()
+					localCharacter.LeftHand.LeftWrist:Remove()
+				end)
+			elseif (FistControl == true) then
+				FistControl = false
+				Pause()
+				local rightwrist  = Instance.new("Motor6D")
+				rightwrist.Name   = "RightWrist"
+				rightwrist.Parent = localCharacter.RightHand
+				rightwrist.C0     = CFrame.new(1.18422506e-07, -0.5009287, -6.81715525e-18, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+				rightwrist.C1     = CFrame.new(3.55267503e-07, 0.125045404, 5.92112528e-08, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+				rightwrist.Part0  = localCharacter.RightLowerArm
+				rightwrist.Part1  = localCharacter.RightHand
+
+				local leftwrist   = Instance.new("Motor6D")
+				leftwrist.Name    = "LeftWrist"
+				leftwrist.Parent  = localCharacter.LeftHand
+				leftwrist.C0      = CFrame.new(0.000475466368, -0.5009287, 7.59417072e-20, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+				leftwrist.C1      = CFrame.new(0.000475821638, 0.125045404, 5.92112528e-08, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+				leftwrist.Part0   = localCharacter.LeftLowerArm
+				leftwrist.Part1   = localCharacter.LeftHand
+			end
+		end
+	end)
+	end)
+
+
+fun:NewButton("Tryhard Animations", "makes you look like a tryhard lol", function()
+while true do
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
+Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083439238"
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
+game.Players.LocalPlayer.Character.Humanoid.Jump = false
+wait(1)
+end
+end)
 
