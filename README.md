@@ -23,10 +23,6 @@ local PLAYER = Window:NewTab("player")
 local player = PLAYER:NewSection("PLAYER")
 
 
-local FUN = Window:NewTab("fun stuff!")
-local fun = FUN:NewSection("FUN STUFF!!!")
-
-
 local EASY = Window:NewTab("more")
 local easy = EASY:NewSection("MORE SUTFF HERE")
 
@@ -1397,9 +1393,8 @@ end
 
 
 --UPDATES HERE--
-
-fun:NewButton("Reach", "makes your fist or knife have reach", function()
-  game:GetService('RunService'):BindToRenderStep("Reach", 0 , function(value)
+easy:NewButton("Reach", "ButtonInfo", function()
+ game:GetService('RunService'):BindToRenderStep("Reach", 0 , function(value)
                 local success, err = pcall(function()
                     if game.Players.LocalPlayer.Character.BodyEffects.Attacking.Value == true then
                         for i,v in pairs(game:GetService('Players'):GetChildren()) do
@@ -1421,9 +1416,11 @@ fun:NewButton("Reach", "makes your fist or knife have reach", function()
                     end
                     end)
                 end)
-		end)
+end)
 
-fun:NewButton("FreeFist keybind B", "makes you have reach on your fists so you can punch from any distance!", function()
+
+
+easy:NewButton("Free Fist KeyBind {B}", "ButtonInfo", function()
 -- // Variables
 	local localPlayer       = game:GetService("Players").LocalPlayer
 	local localCharacter    = localPlayer.Character
@@ -1485,18 +1482,8 @@ fun:NewButton("FreeFist keybind B", "makes you have reach on your fists so you c
 	end)
 
 
-fun:NewButton("Tryhard Animations", "makes you look like a tryhard lol", function()
-while true do
-local Animate = game.Players.LocalPlayer.Character.Animate
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782841498"
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
-Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083439238"
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
-game.Players.LocalPlayer.Character.Humanoid.Jump = false
-wait(1)
-end
+
+easy:NewButton("TryHard Animations", "ButtonInfo", function()
+    print("Clicked")
 end)
 
