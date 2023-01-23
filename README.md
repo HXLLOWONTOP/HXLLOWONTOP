@@ -1,5 +1,3 @@
---if your reading this you can take anything from the script but if its okay just give me credit btw the key is cheats.cc :)
-
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 
@@ -62,7 +60,7 @@ local Settings = {
  
 local SelectedPart = "LowerTorso"
 local Prediction = true
-local PredictionValue = .1209895
+local PredictionValue = .120
  
  
     local AnchorCount = 0
@@ -71,7 +69,7 @@ local PredictionValue = .1209895
     local CC = game:GetService"Workspace".CurrentCamera
     local Plr;
     local enabled = false
-    local accomidationfactor = .1209895
+    local accomidationfactor = .120
     local mouse = game.Players.LocalPlayer:GetMouse()
     local placemarker = Instance.new("Part", game.Workspace)
  
@@ -208,25 +206,25 @@ local PredictionValue = .1209895
              split = string.split(pingvalue,'(')
              ping = tonumber(split[1])
             if ping < 130 then
-                PredictionValue = .1209895
+                PredictionValue = .120
             elseif ping < 125 then
-                PredictionValue = .1209895
+                PredictionValue = .120
             elseif ping < 110 then
-                PredictionValue = .1209895
+                PredictionValue = .120
             elseif ping < 105 then
-                PredictionValue = .1209895
+                PredictionValue = .120
             elseif ping < 90 then
-                PredictionValue = .1209895
+                PredictionValue = .120
             elseif ping < 80 then
-                PredictionValue = .1209895
+                PredictionValue = .120
             elseif ping < 70 then
-                PredictionValue = .1209895
+                PredictionValue = .120
             elseif ping < 60 then
-                PredictionValue = .1209895
+                PredictionValue = .120
             elseif ping < 50 then
-                PredictionValue = .1209895
+                PredictionValue = .120
             elseif ping < 40 then
-                PredictionValue = .1209895
+                PredictionValue = .120
             end
         end
     end)
@@ -1079,13 +1077,57 @@ end
 })
 
 
+local AIMKEY = Window:CreateTab("ANTI LCOK", 8709610734)
+
+local aimkey = AIMKEY :CreateSection("ANTI LOCK")
+
+
+local Button = ANTILOCK:CreateButton({
+    Name = "CREDITS TO SH! FOR ROCKING SOLO ON THIS PROJECT!",
+    Callback = function()
+    -- The function that takes place when the button is pressed
+    end,
+ })
 
 
 
 
-local ANTILOCK = Window:CreateTab("CREDITS", 8709610734) 
+
+ local Button = ANTILOCK:CreateButton({
+    Name = "CREDITS TO SH! FOR ROCKING SOLO ON THIS PROJECT!",
+    Callback = function()
+    -- The function that takes place when the button is pressed
+    end,
+ })
+
+
+
+
+ local Button = ANTILOCK:CreateButton({
+    Name = "CREDITS TO SH! FOR ROCKING SOLO ON THIS PROJECT!",
+    Callback = function()
+    -- The function that takes place when the button is pressed
+    end,
+ })
+
+
+
+
+
+
+
+
+
+
+
+local ANTILOCK = Window:CreateTab("CREDITS", 8709610734)
 
 local antilock = ANTILOCK :CreateSection("CREDITS")
+
+
+
+
+
 
 
 local Button = ANTILOCK:CreateButton({
