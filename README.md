@@ -1,4 +1,23 @@
-local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+ local Rayfield = loadstring(game:HttpGet('https://pastebin.com/raw/wik3JY4Z'))()
+
+Rayfield:Notify({
+   Title = "vux hub on top!",
+   Content = "welcome to vux hub, enjoey",
+   Duration = 5,
+     Image = 8709610734,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "goodbye.",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+
+
 
 
 --window--
@@ -8,7 +27,7 @@ local Window = Rayfield:CreateWindow({
    LoadingSubtitle = "made by sh! with a full heart:)",
    ConfigurationSaving = {
       Enabled = true,
-      FolderName = nil, -- Create a custom folder for your hub/game
+      FolderName = nil,
       FileName = "vux hub config"
    },
    Discord = {
@@ -354,7 +373,7 @@ local player = PLAYER:CreateSection("PLAYERS")
 
 
 local Button = PLAYER:CreateButton({
-   Name = "walkspeed/cframe",
+   Name = "cframe/key {C}",
    Callback = function()
 local Player = game:GetService'Players'.LocalPlayer;
 local UIS = game:GetService'UserInputService';
@@ -1147,5 +1166,8 @@ local Button = ANTILOCK:CreateButton({
     -- The function that takes place when the button is pressed
     end,
  })
+ 
+ 
+
 
 Rayfield:LoadConfiguration()
