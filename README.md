@@ -107,7 +107,7 @@ local PredictionValue = .120
     function noob(player)
         local character
         repeat wait() until player.Character
-        local handler = makemarker(guimain, player.Character:WaitForChild(SelectedPart), Color3.fromRGB(180, 125, 180), 0.3, 3)
+        local handler = makemarker(guimain, player.Character:WaitForChild(SelectedPart), Color3.fromRGB(0, 0, 0), 0.3, 3)
         handler.Name = player.Name
         player.CharacterAdded:connect(function(Char) handler.Adornee = Char:WaitForChild(SelectedPart) end)
  
@@ -140,7 +140,7 @@ local PredictionValue = .120
         end
         placemarker.Transparency = 0.60
         if Settings.rewrittenmain.DOT then
-        makemarker(placemarker, placemarker, Color3.fromRGB(180, 125, 180), 0.40, 0)
+        makemarker(placemarker, placemarker, Color3.fromRGB(0, 0, 0), 0.40, 0)
         end
     end)
  
@@ -341,7 +341,7 @@ local PredictionValue = .120
 local Button = Tab:CreateButton({
    Name = "hood modded aimlock",
    Callback = function()
-   local Settings = { AimLock = { Enabled = true, Aimlockkey = "q", Prediction = 0.122, Aimpart = 'LowerTorso', Notifications = true }, Settings = { Thickness = 8.5, Transparency = 1, Color = Color3.fromRGB(0, 0, 0), FOV = false } } local CurrentCamera = game:GetService("Workspace").CurrentCamera local Inset = game:GetService("GuiService"):GetGuiInset().Y local RunService = game:GetService("RunService") local Mouse = game.Players.LocalPlayer:GetMouse() local LocalPlayer = game.Players.LocalPlayer local Line = Drawing.new("Line") local Circle = Drawing.new("Circle") local Plr = game.Players.LocalPlayer Mouse.KeyDown:Connect(function(KeyPressed) if KeyPressed == (Settings.AimLock.Aimlockkey) then if Settings.AimLock.Enabled == true then Settings.AimLock.Enabled = false if Settings.AimLock.Notifications == true then Plr = FindClosestPlayer() game.StarterGui:SetCore("SendNotification", { Title = "VUX HUB ON TOP", Text = "UNLOCKED" }) end else Plr = FindClosestPlayer() Settings.AimLock.Enabled = true if Settings.AimLock.Notifications == true then game.StarterGui:SetCore("SendNotification", { Title = "VUX HUB ON TOP", Text = "Locked On : " .. tostring(Plr.Character.Humanoid.DisplayName) }) end end end end) function FindClosestPlayer() local ClosestDistance, ClosestPlayer = math.huge, nil; for _, Player in next, game:GetService("Players"):GetPlayers() do if Player ~= LocalPlayer then local Character = Player.Character if Character and Character.Humanoid.Health > 1 then local Position, IsVisibleOnViewPort = CurrentCamera:WorldToViewportPoint(Character.HumanoidRootPart .Position) if IsVisibleOnViewPort then local Distance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(Position.X, Position.Y)).Magnitude if Distance < ClosestDistance then ClosestPlayer = Player ClosestDistance = Distance end end end end end return ClosestPlayer, ClosestDistance end RunService.Heartbeat:connect(function() if Settings.AimLock.Enabled == true then local Vector = CurrentCamera:WorldToViewportPoint(Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction)) Line.Color = Settings.Settings.Color Line.Transparency = Settings.Settings .Transparency Line.Thickness = Settings.Settings .Thickness Line.From = Vector2.new(Mouse.X, Mouse.Y + Inset) Line.To = Vector2.new(Vector.X, Vector.Y) Line.Visible = true Circle.Position = Vector2.new(Mouse.X, Mouse.Y + Inset) Circle.Visible = Settings.Settings.FOV Circle.Thickness = 15.5 Circle.Thickness = 15 Circle.Radius = 450 Circle.Color = Settings.Settings.Color elseif Settings.AimLock.FOV == true then Circle.Visible = true else Circle.Visible = false Line.Visible = false end end) local mt = getrawmetatable(game) local old = mt.__namecall setreadonly(mt, false) mt.__namecall = newcclosure(function(...) local args = {...} if Settings.AimLock.Enabled and getnamecallmethod() == "FireServer" and args[2] == "MousePos" then args[3] = Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction) return old(unpack(args)) end return old(...) end)
+   local Settings = { AimLock = { Enabled = true, Aimlockkey = "q", Prediction = 0.120, Aimpart = 'LowerTorso', Notifications = true }, Settings = { Thickness = 2.5, Transparency = 1, Color = Color3.fromRGB(0, 0, 0), FOV = false } } local CurrentCamera = game:GetService("Workspace").CurrentCamera local Inset = game:GetService("GuiService"):GetGuiInset().Y local RunService = game:GetService("RunService") local Mouse = game.Players.LocalPlayer:GetMouse() local LocalPlayer = game.Players.LocalPlayer local Line = Drawing.new("Line") local Circle = Drawing.new("Circle") local Plr = game.Players.LocalPlayer Mouse.KeyDown:Connect(function(KeyPressed) if KeyPressed == (Settings.AimLock.Aimlockkey) then if Settings.AimLock.Enabled == true then Settings.AimLock.Enabled = false if Settings.AimLock.Notifications == true then Plr = FindClosestPlayer() game.StarterGui:SetCore("SendNotification", { Title = "VUX HUB ON TOP", Text = "UNLOCKED" }) end else Plr = FindClosestPlayer() Settings.AimLock.Enabled = true if Settings.AimLock.Notifications == true then game.StarterGui:SetCore("SendNotification", { Title = "VUX HUB ON TOP", Text = "Locked On : " .. tostring(Plr.Character.Humanoid.DisplayName) }) end end end end) function FindClosestPlayer() local ClosestDistance, ClosestPlayer = math.huge, nil; for _, Player in next, game:GetService("Players"):GetPlayers() do if Player ~= LocalPlayer then local Character = Player.Character if Character and Character.Humanoid.Health > 1 then local Position, IsVisibleOnViewPort = CurrentCamera:WorldToViewportPoint(Character.HumanoidRootPart .Position) if IsVisibleOnViewPort then local Distance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(Position.X, Position.Y)).Magnitude if Distance < ClosestDistance then ClosestPlayer = Player ClosestDistance = Distance end end end end end return ClosestPlayer, ClosestDistance end RunService.Heartbeat:connect(function() if Settings.AimLock.Enabled == true then local Vector = CurrentCamera:WorldToViewportPoint(Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction)) Line.Color = Settings.Settings.Color Line.Transparency = Settings.Settings .Transparency Line.Thickness = Settings.Settings .Thickness Line.From = Vector2.new(Mouse.X, Mouse.Y + Inset) Line.To = Vector2.new(Vector.X, Vector.Y) Line.Visible = true Circle.Position = Vector2.new(Mouse.X, Mouse.Y + Inset) Circle.Visible = Settings.Settings.FOV Circle.Thickness = 15.5 Circle.Thickness = 15 Circle.Radius = 450 Circle.Color = Settings.Settings.Color elseif Settings.AimLock.FOV == true then Circle.Visible = true else Circle.Visible = false Line.Visible = false end end) local mt = getrawmetatable(game) local old = mt.__namecall setreadonly(mt, false) mt.__namecall = newcclosure(function(...) local args = {...} if Settings.AimLock.Enabled and getnamecallmethod() == "FireServer" and args[2] == "MousePos" then args[3] = Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction) return old(unpack(args)) end return old(...) end)
    end,
 })
 
@@ -359,7 +359,7 @@ local Button = PLAYER:CreateButton({
 local Player = game:GetService'Players'.LocalPlayer;
 local UIS = game:GetService'UserInputService';
 UIS.InputBegan:connect(function(UserInput)
-        if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.LeftShift then
+        if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.C then
             _G.Running = true
                 while wait(0.005) and _G.Running == true do
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1
@@ -369,7 +369,7 @@ end
         end
 end)
 UIS.InputEnded:connect(function(UserInput)
-        if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.LeftShift then
+        if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.C then
                 _G.Running = false
         end
 end)
@@ -497,29 +497,6 @@ local mouse = plr:GetMouse()
 
 
 
-local Button = PLAYER:CreateButton({
-   Name = "inf jump",
-   Callback = function()
-local Player = game:GetService'Players'.LocalPlayer;
-local UIS = game:GetService'UserInputService';
- 
-_G.JumpHeight = 50;
- 
-function Action(Object, Function) if Object ~= nil then Function(Object); end end
- 
-UIS.InputBegan:connect(function(UserInput)
-    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
-        Action(Player.Character.Humanoid, function(self)
-            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
-                Action(self.Parent.HumanoidRootPart, function(self)
-                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
-                end)
-            end
-        end)
-    end
-end)
-   end,
-})
 
 
 
@@ -838,52 +815,7 @@ chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Positio
 })
 
 
-local Button = OTHER:CreateButton({
-   Name = "anti lock",
-   Callback = function()
--- BEST ANTI LOCK KEYBIND {V} 
-getgenv().Underground = true
-getgenv().UndergroundAmount = -999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999-999
-local OK = false
-local toggle = false
- 
-local function Notify(text)
-        game:GetService("StarterGui"):SetCore("SendNotification",
-        {
-            Title = "BOZO LOCKERS RIP",
-            Text = text,
-            Duration = 1,
-            Button1 = ""
-        }
-        )
-    end
- 
-game:GetService("RunService").heartbeat:Connect(function()
-    if OK == true then
-    if getgenv().Underground ~= false then 
-    local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(-350,-         getgenv().UndergroundAmount,-298) 
-    game:GetService("RunService").RenderStepped:Wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = vel
-    end
-    end
-end)
- 
-game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
- if KeyPressed == "v" then
-     if toggle == false then
-toggle = true
-            OK = true
-Notify('anti on >:)')
-else
-toggle = false
-        OK = false
-Notify('anti  off >:(')
-end
-end
-end)
-   end,
-})
+
 
 
 
@@ -1078,7 +1010,114 @@ end
 
 
 
+local AIMBOTTER = Window:CreateTab("ANTI LOCK", 8709610734)
 
+local aimbotter = AIMBOTTER :CreateSection("ANTI LOCK")
+
+
+
+local Button = AIMBOTTER:CreateButton({
+    Name = "sky aa/key {v}",
+    Callback = function()
+ -- BEST ANTI LOCK KEYBIND {V} 
+ getgenv().Underground = true
+ getgenv().UndergroundAmount = -999
+ local OK = false
+ local toggle = false
+  
+ local function Notify(text)
+         game:GetService("StarterGui"):SetCore("SendNotification",
+         {
+             Title = "VUX LOVES YOU",
+             Text = text,
+             Duration = 1,
+             Button1 = ""
+         }
+         )
+     end
+  
+ game:GetService("RunService").heartbeat:Connect(function()
+     if OK == true then
+     if getgenv().Underground ~= false then 
+     local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+     game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(-999,-         getgenv().UndergroundAmount,-999) 
+     game:GetService("RunService").RenderStepped:Wait()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = vel
+     end
+     end
+ end)
+  
+ game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+  if KeyPressed == "v" then
+      if toggle == false then
+ toggle = true
+             OK = true
+ Notify('anti on >:)')
+ else
+ toggle = false
+         OK = false
+ Notify('anti  off >:(')
+ end
+ end
+ end)
+    end,
+ })
+
+
+
+
+
+ local Button = AIMBOTTER:CreateButton({
+    Name = "underground aa/key {z}",
+    Callback = function()
+ -- BEST ANTI LOCK KEYBIND {V} 
+ getgenv().Underground = true
+ getgenv().UndergroundAmount = 999
+ local OK = false
+ local toggle = false
+  
+ local function Notify(text)
+         game:GetService("StarterGui"):SetCore("SendNotification",
+         {
+             Title = "VUX LOVES YOU",
+             Text = text,
+             Duration = 1,
+             Button1 = ""
+         }
+         )
+     end
+  
+ game:GetService("RunService").heartbeat:Connect(function()
+     if OK == true then
+     if getgenv().Underground ~= false then 
+     local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+     game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(-999,-         getgenv().UndergroundAmount,-999) 
+     game:GetService("RunService").RenderStepped:Wait()
+     game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = vel
+     end
+     end
+ end)
+  
+ game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+  if KeyPressed == "z" then
+      if toggle == false then
+ toggle = true
+             OK = true
+ Notify('anti on >:)')
+ else
+ toggle = false
+         OK = false
+ Notify('anti  off >:(')
+ end
+ end
+ end)
+    end,
+ })
+
+
+
+
+-- MORE COMING TO THE ANTI SECTION SOON!
 
 
 
