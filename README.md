@@ -1077,38 +1077,10 @@ end
 })
 
 
-local AIMKEY = Window:CreateTab("ANTI LCOK", 8709610734)
-
-local aimkey = AIMKEY :CreateSection("ANTI LOCK")
-
-
-local Button = ANTILOCK:CreateButton({
-    Name = "CREDITS TO SH! FOR ROCKING SOLO ON THIS PROJECT!",
-    Callback = function()
-    -- The function that takes place when the button is pressed
-    end,
- })
 
 
 
 
-
- local Button = ANTILOCK:CreateButton({
-    Name = "CREDITS TO SH! FOR ROCKING SOLO ON THIS PROJECT!",
-    Callback = function()
-    -- The function that takes place when the button is pressed
-    end,
- })
-
-
-
-
- local Button = ANTILOCK:CreateButton({
-    Name = "CREDITS TO SH! FOR ROCKING SOLO ON THIS PROJECT!",
-    Callback = function()
-    -- The function that takes place when the button is pressed
-    end,
- })
 
 
 
