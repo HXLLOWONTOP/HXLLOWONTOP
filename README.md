@@ -1,380 +1,310 @@
+getgenv().LibTheme = {
+    MainColor = Color3.fromRGB(40,20,40);
+    BrighterMainColor = Color3.fromRGB(30,12,42);
+    IconsColor = Color3.fromRGB(0,111,111);
+    Accent = Color3.fromRGB(0,100,255);
+    DarkText = Color3.fromRGB(170,170,170);
+    BrightText = Color3.fromRGB(145,145,145);
+    Font = "Gotham";
+    SoundVolume = 0.0;
+    HideKey = "RightShift"
+}
 
- local Rayfield = loadstring(game:HttpGet('https://pastebin.com/raw/wik3JY4Z'))()
 
- Rayfield:Notify({
-    Title = "vux hub on top!",
-    Content = "welcome to vux hub, enjoey",
-    Duration = 5,
-      Image = 8709610734,
-    Actions = { -- Notification Buttons
-       Ignore = {
-          Name = "goodbye.",
-          Callback = function()
-          print("The user tapped Okay!")
-       end
-    },
- },
- })
+
+
+local Library = loadstring(game:HttpGet("https://github.com/slf0Dev/Ocerium_Project/raw/main/Ocerium%20Special%20ui"))()
+
+local Main = Library.Main("SloxicWare | Priv Request")
+
+local Page = Main.Page("Main","3926305904",Vector2.new(924, 204),Vector2.new(36, 36))
+
+local Section = Page.Section("Main Stuff")
+
+local Button = Section.Component("Button","Hood Modded AimLock | OP",function()
+  local Settings = { AimLock = { Enabled = true, Aimlockkey = "q", Prediction = 0.120, Aimpart = 'LowerTorso', Notifications = true }, Settings = { Thickness = 2.5, Transparency = 1, Color = Color3.fromRGB(190, 20, 190), FOV = false } } local CurrentCamera = game:GetService("Workspace").CurrentCamera local Inset = game:GetService("GuiService"):GetGuiInset().Y local RunService = game:GetService("RunService") local Mouse = game.Players.LocalPlayer:GetMouse() local LocalPlayer = game.Players.LocalPlayer local Line = Drawing.new("Line") local Circle = Drawing.new("Circle") local Plr = game.Players.LocalPlayer Mouse.KeyDown:Connect(function(KeyPressed) if KeyPressed == (Settings.AimLock.Aimlockkey) then if Settings.AimLock.Enabled == true then Settings.AimLock.Enabled = false if Settings.AimLock.Notifications == true then Plr = FindClosestPlayer() game.StarterGui:SetCore("SendNotification", { Title = "use sloxic skids | dont run dont trip", Text = "UNLOCKED" }) end else Plr = FindClosestPlayer() Settings.AimLock.Enabled = true if Settings.AimLock.Notifications == true then game.StarterGui:SetCore("SendNotification", { Title = "use sloxic skids | dont run dont trip", Text = "Locked On : " .. tostring(Plr.Character.Humanoid.DisplayName) }) end end end end) function FindClosestPlayer() local ClosestDistance, ClosestPlayer = math.huge, nil; for _, Player in next, game:GetService("Players"):GetPlayers() do if Player ~= LocalPlayer then local Character = Player.Character if Character and Character.Humanoid.Health > 1 then local Position, IsVisibleOnViewPort = CurrentCamera:WorldToViewportPoint(Character.HumanoidRootPart .Position) if IsVisibleOnViewPort then local Distance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(Position.X, Position.Y)).Magnitude if Distance < ClosestDistance then ClosestPlayer = Player ClosestDistance = Distance end end end end end return ClosestPlayer, ClosestDistance end RunService.Heartbeat:connect(function() if Settings.AimLock.Enabled == true then local Vector = CurrentCamera:WorldToViewportPoint(Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction)) Line.Color = Settings.Settings.Color Line.Transparency = Settings.Settings .Transparency Line.Thickness = Settings.Settings .Thickness Line.From = Vector2.new(Mouse.X, Mouse.Y + Inset) Line.To = Vector2.new(Vector.X, Vector.Y) Line.Visible = true Circle.Position = Vector2.new(Mouse.X, Mouse.Y + Inset) Circle.Visible = Settings.Settings.FOV Circle.Thickness = 15.5 Circle.Thickness = 15 Circle.Radius = 450 Circle.Color = Settings.Settings.Color elseif Settings.AimLock.FOV == true then Circle.Visible = true else Circle.Visible = false Line.Visible = false end end) local mt = getrawmetatable(game) local old = mt.__namecall setreadonly(mt, false) mt.__namecall = newcclosure(function(...) local args = {...} if Settings.AimLock.Enabled and getnamecallmethod() == "FireServer" and args[2] == "MousePos" then args[3] = Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction) return old(unpack(args)) end return old(...) end)
+end)
+
+
+local Button = Section.Component("Button","aimlock",function()
+--this is from sloxic dont skid fat bitch
+local CC = game:GetService"Workspace".CurrentCamera
+    local Plr
+    local enabled = falseWD
+    local accomidationfactor = .12027 --you can change this to wtv
+    local mouse = game.Players.LocalPlayer:GetMouse()
+    local placemarker = Instance.new("Part", game.Workspace)
+ 
+    function makemarker(Parent, Adornee, Color, Size, Size2)
+        local e = Instance.new("BillboardGui", Parent)
+        e.Name = "sh!"
+        e.Adornee = Adornee
+        e.Size = UDim2.new(Size, Size2, Size, Size2)
+        e.AlwaysOnTop = true
+        local a = Instance.new("Frame", e)
+        a.Size = UDim2.new(1, 0, 1, 0)
+        a.BackgroundTransparency = 0
+        a.BackgroundColor3 = Color
+        local g = Instance.new("UICorner", a)
+        g.CornerRadius = UDim.new(50, 50)
+        return(e)
+    end
  
  
  
  
  
- --window--
- local Window = Rayfield:CreateWindow({
-    Name = "🔥VUX HUB🔥",
-    LoadingTitle = "welcome to vux hub.",
-    LoadingSubtitle = "made by sh! with a full heart:)",
-    ConfigurationSaving = {
-       Enabled = true,
-       FolderName = nil,
-       FileName = "vux hub config"
-    },
-    Discord = {
-       Enabled = false,
-       Invite = "/closet cheating", -- The Discord invite code, do not include discord.gg/
-       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
-    },
-    KeySystem = true, -- Set this to true to use our key system
-    KeySettings = {
-       Title = "vux hub keysystem",
-       Subtitle = "Key System",
-       Note = "Join the discord https://discord.gg/dTvYP5RU",
-       FileName = "vux hub's key",
-       SaveKey = true,
-       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-       Key = "cheats.cc"
+ 
+         _G.Types = {
+        Ball = Enum.PartType.Ball,
+        Block = Enum.PartType.Block, 
+        Cylinder = Enum.PartType.Cylinder
     }
- })
+    
+    
+    
+    _G.Types = {
+                Ball = Enum.PartType.Ball,
+                Block = Enum.PartType.Block, 
+                Cylinder = Enum.PartType.Cylinder
+            }
+                              
+                           
+                              
+ 
+    --variables
+    Tracer = Drawing.new("Tracer")                 
+        local Tracer = Instance.new("Part", game.Workspace)
+    Tracer.Name = "gay" 
+    Tracer.Anchored = false      
+    Tracer.CanCollide = false
+    Tracer.Transparency = 0.8
+    Tracer.Parent = game.Workspace  
+    Tracer.Shape = _G.Types.Block
+    Tracer.Size = Vector3.new(14,14,14)
+    Tracer.Color = Color3.fromRGB(255,7,255)
+    
+
+ 
+    --
+    local plr = game.Players.LocalPlayer
+local mouse = plr:GetMouse()
+local Runserv = game:GetService("RunService")
+ 
+circle = Drawing.new("Circle")
+circle.Color = Color3.fromRGB(190,20,190)
+circle.Thickness = 0
+circle.NumSides = 732
+circle.Radius = 120
+circle.Thickness = 0
+circle.Transparency = 0.7 
+circle.Visible = false
+circle.Filled = false
+ 
+Runserv.RenderStepped:Connect(function()
+    circle.Position = Vector2.new(mouse.X,mouse.Y+35)
+end)
  
  
  
+      local Inset = game:GetService("GuiService"):GetGuiInset().Y
+                local Line = Drawing.new("Line")
+                    local Text = Drawing.new("Text")
+        local guimain = Instance.new("Folder", game.CoreGui)
+        local CC = game:GetService"Workspace".CurrentCamera
+    local LocalMouse = game.Players.LocalPlayer:GetMouse()
+        local Locking = false
  
  
- --tabs--
- local Tab = Window:CreateTab("AIMBOT/AIMLOCK", 8709610734) 
+    --
+    if getgenv().valiansh == true then
+                        game.StarterGui:SetCore("SendNotification", {
+                   Title = "priv",
+                   Text = "Already Loaded!",
+                   Duration = 5
  
- local Section = Tab:CreateSection("aimbot's")
+                   })
+        return
+    end
+ 
+    getgenv().valiansh = true
+ 
+        local UserInputService = game:GetService("UserInputService")
+ 
+    UserInputService.InputBegan:Connect(function(keygo,ok)
+           if (not ok) then
+           if (keygo.KeyCode == getgenv().Key) then
+               if getgenv().Target == true then
+               Locking = not Locking
+ 
+               if Locking then
+               Plr =  getClosestPlayerToCursor()
+                if getgenv().ChatMode then
+        local A_1 = "Target: "..tostring(Plr.Character.Humanoid.DisplayName) local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+            end 
+               if getgenv().NotifMode then
+                game.StarterGui:SetCore("SendNotification", {
+        Title = "sh!";
+        Text = "Target: "..tostring(Plr.Character.Humanoid.DisplayName);
+ 
+    })
+    end
+    elseif not Locking then
+         if getgenv().ChatMode then
+        local A_1 = "Unlocked!" local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2) 
+            end 
+        if getgenv().NotifMode then
+                        game.StarterGui:SetCore("SendNotification", {
+                   Title = "sh!",
+                   Text = "Unlocked",
+                   Duration = 5
+               })
+           elseif getgenv().Target == false then
+                        game.StarterGui:SetCore("SendNotification", {
+                   Title = "sh!",
+                   Text = "Target isn't enabled",
+                   Duration = 5
+ 
+                   })
+ 
+               end
  
  
+ end     end   
+end
+end
+end)
  
+    function getClosestPlayerToCursor()
+        local closestPlayer
+        local shortestDistance = circle.Radius
  
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("LowerTorso") then
+                local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+                local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(LocalMouse.X, LocalMouse.Y)).magnitude
+                if magnitude < shortestDistance then
+                    closestPlayer = v
+                    shortestDistance = magnitude
+                end
+            end
+        end
+        return closestPlayer
+    end
+--
+if getgenv().PartMode then
+    game:GetService"RunService".Stepped:connect(function()
+        if Locking and Plr.Character and Plr.Character:FindFirstChild("LowerTorso") then
+            Tracer.CFrame = CFrame.new(Plr.Character.LowerTorso.Position+(Plr.Character.LowerTorso.Velocity*Prediction))
+        else
+            Tracer.CFrame = CFrame.new(0, 9999, 0)
  
- --buttons--
- local Button = Tab:CreateButton({
-    Name = "aimlock",
-    Callback = function()
- local Settings = {
-     rewrittenmain = {
-         Enabled = true,
-         Key = "q",
-         DOT = true,
-         AIRSHOT = true,
-         NOTIF = true,
-         AUTOPRED = false,
-         FOV = math.huge,
-         RESOVLER = false
-     }
- }
-  
- local SelectedPart = "LowerTorso"
- local Prediction = true
- local PredictionValue = .120
-  
-  
-     local AnchorCount = 0
-     local MaxAnchor = 6
-  
-     local CC = game:GetService"Workspace".CurrentCamera
-     local Plr;
-     local enabled = false
-     local accomidationfactor = .120
-     local mouse = game.Players.LocalPlayer:GetMouse()
-     local placemarker = Instance.new("Part", game.Workspace)
-  
-     function makemarker(Parent, Adornee, Color, Size, Size2)
-         local e = Instance.new("BillboardGui", Parent)
-         e.Name = "PP"
-         e.Adornee = Adornee
-         e.Size = UDim2.new(Size, Size2, Size, Size2)
-         e.AlwaysOnTop = Settings.rewrittenmain.DOT
-         local a = Instance.new("Frame", e)
-         if Settings.rewrittenmain.DOT == true then
-         a.Size = UDim2.new(1, 0, 1, 0)
-         else
-         a.Size = UDim2.new(0, 0, 0, 0)
-         end
-         if Settings.rewrittenmain.DOT == true then
-         a.Transparency = 0
-         a.BackgroundTransparency = 0
-         else
-         a.Transparency = 1
-         a.BackgroundTransparency = 1
-         end
-         a.BackgroundColor3 = Color
-         local g = Instance.new("UICorner", a)
-         if Settings.rewrittenmain.DOT == false then
-         g.CornerRadius = UDim.new(0, 0)
-         else
-         g.CornerRadius = UDim.new(1, 1) 
-         end
-         return(e)
-     end
-  
-  
-     local data = game.Players:GetPlayers()
-     function noob(player)
-         local character
-         repeat wait() until player.Character
-         local handler = makemarker(guimain, player.Character:WaitForChild(SelectedPart), Color3.fromRGB(0, 0, 0), 0.3, 3)
-         handler.Name = player.Name
-         player.CharacterAdded:connect(function(Char) handler.Adornee = Char:WaitForChild(SelectedPart) end)
-  
-  
-         spawn(function()
-             while wait() do
-                 if player.Character then
-                 end
-             end
-         end)
-     end
-  
-     for i = 1, #data do
-         if data[i] ~= game.Players.LocalPlayer then
-             noob(data[i])
-         end
-     end
-  
-     game.Players.PlayerAdded:connect(function(Player)
-         noob(Player)
-     end)
-  
-     spawn(function()
-         placemarker.Anchored = true
-         placemarker.CanCollide = false
-         if Settings.rewrittenmain.DOT == true then
-         placemarker.Size = Vector3.new(7, 7, 7)
-         else
-         placemarker.Size = Vector3.new(0, 0, 0)
-         end
-         placemarker.Transparency = 0.60
-         if Settings.rewrittenmain.DOT then
-         makemarker(placemarker, placemarker, Color3.fromRGB(0, 0, 0), 0.40, 0)
-         end
-     end)
-  
-     game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(k)
-         if k == Settings.rewrittenmain.Key and Settings.rewrittenmain.Enabled then
-             if enabled == true then
-                 enabled = false
-                 if Settings.rewrittenmain.NOTIF == true then
-                     Plr = getClosestPlayerToCursor()
-                 game.StarterGui:SetCore("SendNotification", {
-                     Title = "VUX HUB ON TOP";
-                     Text = "UNLOCKED",
-                     Duration = 3
-                 })
-             end
-             else
-                 Plr = getClosestPlayerToCursor()
-                 enabled = true
-                 if Settings.rewrittenmain.NOTIF == true then
-  
-                     game.StarterGui:SetCore("SendNotification", {
-                         Title = "VUX HUB ON TOP";
-                         Text = "Target: "..tostring(Plr.Character.Humanoid.DisplayName),
-                         Duration = 3
-                     })
-  
-                 end
-             end
-         end
-     end)
-  
-  
-  
-     function getClosestPlayerToCursor()
-         local closestPlayer
-         local shortestDistance = Settings.rewrittenmain.FOV
-  
-         for i, v in pairs(game.Players:GetPlayers()) do
-             if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") then
-                 local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
-                 local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
-                 if magnitude < shortestDistance then
-                     closestPlayer = v
-                     shortestDistance = magnitude
-                 end
-             end
-         end
-         return closestPlayer
-     end
-  
-     local pingvalue = nil;
-     local split = nil;
-     local ping = nil;
-  
-     game:GetService"RunService".Stepped:connect(function()
-         if enabled and Plr.Character ~= nil and Plr.Character:FindFirstChild("HumanoidRootPart") then
-             placemarker.CFrame = CFrame.new(Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor))
-         else
-             placemarker.CFrame = CFrame.new(0, 9999, 0)
-         end
-         if Settings.rewrittenmain.AUTOPRED == true then
-              pingvalue = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
-              split = string.split(pingvalue,'(')
-              ping = tonumber(split[1])
-             if ping < 130 then
-                 PredictionValue = .120
-             elseif ping < 125 then
-                 PredictionValue = .120
-             elseif ping < 110 then
-                 PredictionValue = .120
-             elseif ping < 105 then
-                 PredictionValue = .120
-             elseif ping < 90 then
-                 PredictionValue = .120
-             elseif ping < 80 then
-                 PredictionValue = .120
-             elseif ping < 70 then
-                 PredictionValue = .120
-             elseif ping < 60 then
-                 PredictionValue = .120
-             elseif ping < 50 then
-                 PredictionValue = .120
-             elseif ping < 40 then
-                 PredictionValue = .120
-             end
-         end
-     end)
-  
-     local mt = getrawmetatable(game)
-     local old = mt.__namecall
-     setreadonly(mt, false)
-     mt.__namecall = newcclosure(function(...)
-         local args = {...}
-         if enabled and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" and Settings.rewrittenmain.Enabled and Plr.Character ~= nil then
-  
-             -- args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor)
-             --[[
-             if Settings.rewrittenmain.AIRSHOT == true then
-                 if game.Workspace.Players[Plr.Name].Humanoid:GetState() == Enum.HumanoidStateType.Freefall then -- Plr.Character:WaitForChild("Humanoid"):GetState() == Enum.HumanoidStateType.Freefall
-  
-                     --// Airshot
-                     args[3] = Plr.Character.LeftFoot.Position+(Plr.Character.LeftFoot.Velocity*PredictionValue)
-  
-                 else
-                     args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*PredictionValue)
-  
-                 end
-             else
-                     args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*PredictionValue)
-             end
-             ]]
-             if Prediction == true then
-  
-             args[3] = Plr.Character[SelectedPart].Position+(Plr.Character[SelectedPart].Velocity*PredictionValue)
-  
-             else
-  
-             args[3] = Plr.Character[SelectedPart].Position
-  
-             end
-  
-             return old(unpack(args))
-         end
-         return old(...)
-     end)
-  
-     game:GetService("RunService").RenderStepped:Connect(function()
-         if Settings.rewrittenmain.RESOVLER == true and Plr.Character ~= nil and enabled and Settings.rewrittenmain.Enabled then
-         if Settings.rewrittenmain.AIRSHOT == true and enabled and Plr.Character ~= nil then
-  
-             if game.Workspace.Players[Plr.Name].Humanoid:GetState() == Enum.HumanoidStateType.Freefall then -- Plr.Character:WaitForChild("Humanoid"):GetState() == Enum.HumanoidStateType.Freefall
-  
-                 --// Airshot
-  
-                 --// Anchor Check
-  
-                 if Plr.Character ~= nil and Plr.Character.HumanoidRootPart.Anchored == true then
-                     AnchorCount = AnchorCount + 1
-                     if AnchorCount >= MaxAnchor then
-                         Prediction = false
-                         wait(2)
-                         AnchorCount = 0;
-                     end
-                 else
-                     Prediction = true
-                     AnchorCount = 0;
-                 end
-  
-                 SelectedPart = "LeftFoot"
-  
-             else
-                 --// Anchor Check
-  
-                 if Plr.Character ~= nil and Plr.Character.HumanoidRootPart.Anchored == true then
-                     AnchorCount = AnchorCount + 1
-                     if AnchorCount >= MaxAnchor then
-                         Prediction = false
-                         wait(2)
-                         AnchorCount = 0;
-                     end
-                 else
-                     Prediction = true
-                     AnchorCount = 0;
-                 end
-  
-                 SelectedPart = "HumanoidRootPart"
-  
-             end
-             else
-  
-                 --// Anchor Check
-  
-                 if Plr.Character ~= nil and Plr.Character.HumanoidRootPart.Anchored == true then
-                     AnchorCount = AnchorCount + 1
-                     if AnchorCount >= MaxAnchor then
-                         Prediction = false
-                         wait(2)
-                         AnchorCount = 0;
-                     end
-                 else
-                     Prediction = true
-                     AnchorCount = 0;
-                 end
-  
-                 SelectedPart = "HumanoidRootPart"
-             end
-  
-         else
-                 SelectedPart = "HumanoidRootPart"
-         end
-     end)
-    end,
- })
+        end
+    end)
+end
+ 
+
  
  
  
+       placemarker.Anchored = true
+                   local placemarker = Instance.new("Part", game.Workspace)
+                              placemarker.Shape = _G.Types.Block
+                              placemarker.Material = "ForceField"
+                              placemarker.Color = Color3.new(20, 190, 20)
+                              placemarkertransparency = 50 
  
- local Button = Tab:CreateButton({
-    Name = "hood modded aimlock",
-    Callback = function()
-    local Settings = { AimLock = { Enabled = true, Aimlockkey = "q", Prediction = 0.120, Aimpart = 'LowerTorso', Notifications = true }, Settings = { Thickness = 2.5, Transparency = 1, Color = Color3.fromRGB(0, 0, 0), FOV = false } } local CurrentCamera = game:GetService("Workspace").CurrentCamera local Inset = game:GetService("GuiService"):GetGuiInset().Y local RunService = game:GetService("RunService") local Mouse = game.Players.LocalPlayer:GetMouse() local LocalPlayer = game.Players.LocalPlayer local Line = Drawing.new("Line") local Circle = Drawing.new("Circle") local Plr = game.Players.LocalPlayer Mouse.KeyDown:Connect(function(KeyPressed) if KeyPressed == (Settings.AimLock.Aimlockkey) then if Settings.AimLock.Enabled == true then Settings.AimLock.Enabled = false if Settings.AimLock.Notifications == true then Plr = FindClosestPlayer() game.StarterGui:SetCore("SendNotification", { Title = "VUX HUB ON TOP", Text = "UNLOCKED" }) end else Plr = FindClosestPlayer() Settings.AimLock.Enabled = true if Settings.AimLock.Notifications == true then game.StarterGui:SetCore("SendNotification", { Title = "VUX HUB ON TOP", Text = "Locked On : " .. tostring(Plr.Character.Humanoid.DisplayName) }) end end end end) function FindClosestPlayer() local ClosestDistance, ClosestPlayer = math.huge, nil; for _, Player in next, game:GetService("Players"):GetPlayers() do if Player ~= LocalPlayer then local Character = Player.Character if Character and Character.Humanoid.Health > 1 then local Position, IsVisibleOnViewPort = CurrentCamera:WorldToViewportPoint(Character.HumanoidRootPart .Position) if IsVisibleOnViewPort then local Distance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(Position.X, Position.Y)).Magnitude if Distance < ClosestDistance then ClosestPlayer = Player ClosestDistance = Distance end end end end end return ClosestPlayer, ClosestDistance end RunService.Heartbeat:connect(function() if Settings.AimLock.Enabled == true then local Vector = CurrentCamera:WorldToViewportPoint(Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction)) Line.Color = Settings.Settings.Color Line.Transparency = Settings.Settings .Transparency Line.Thickness = Settings.Settings .Thickness Line.From = Vector2.new(Mouse.X, Mouse.Y + Inset) Line.To = Vector2.new(Vector.X, Vector.Y) Line.Visible = true Circle.Position = Vector2.new(Mouse.X, Mouse.Y + Inset) Circle.Visible = Settings.Settings.FOV Circle.Thickness = 15.5 Circle.Thickness = 15 Circle.Radius = 450 Circle.Color = Settings.Settings.Color elseif Settings.AimLock.FOV == true then Circle.Visible = true else Circle.Visible = false Line.Visible = false end end) local mt = getrawmetatable(game) local old = mt.__namecall setreadonly(mt, false) mt.__namecall = newcclosure(function(...) local args = {...} if Settings.AimLock.Enabled and getnamecallmethod() == "FireServer" and args[2] == "MousePos" then args[3] = Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction) return old(unpack(args)) end return old(...) end)
-    end,
- })
+    local data = game.Players:GetPlayers()
+    function noob(player)
+        local character
+        repeat wait() until player.Character
+        local handler = makemarker(guimain, player.Character:WaitForChild("HumanoidRootPart"), Color3.fromRGB(190, 20, 190), 0.3, 3)
+        handler.Name = player.Name
+        player.CharacterAdded:connect(function(Char) handler.Adornee = Char:WaitForChild("HumanoidRootPart") end)
  
  
+        spawn(function()
+            while wait() do
+                if player.Character then
+                    TextLabel.Text = player.Name..tostring(player:WaitForChild("leaderstats").Wanted.Value).." | "..tostring(math.floor(player.Character:WaitForChild("Humanoid").Health))
+                end
+            end
+        end)
+    end
  
- local PLAYER = Window:CreateTab("PLAYER", 8709610734) 
+    for i = 1, #data do
+        if data[i] ~= game.Players.LocalPlayer then
+            noob(data[i])
+        end
+    end
  
- local player = PLAYER:CreateSection("PLAYERS")
+    game.Players.PlayerAdded:connect(function(Player)
+        noob(Player)
+    end)
  
+    spawn(function()
+        placemarker.Anchored = true
+        placemarker.CanCollide = false
+        placemarker.Size = Vector3.new(7, 11, 7)
+        placemarker.Transparency = 0.50
+        makemarker(placemarker, placemarker, Color3.fromRGB(190, 20, 190), 0.40, 0)
+    end)
+    
+        
  
+mouse.KeyDown:Connect(function(k)
+    if k ~= "e" then return end
+    if enabled then
+        enabled = false
+        guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(190, 20, 190)
+    else
+        enabled = true 
+        Plr = getClosestPlayerToCursor()
+        guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(190, 20, 190)
+    end    
+end)
  
- local Button = PLAYER:CreateButton({
-    Name = "cframe/key {C}",
-    Callback = function()
+    function getClosestPlayerToCursor()
+        local closestPlayer
+        local shortestDistance = math.huge
+ 
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") then
+                local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+                local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
+                if magnitude < shortestDistance then
+                    closestPlayer = v
+                    shortestDistance = magnitude
+                end
+            end
+        end
+        return closestPlayer
+    end
+ 
+    game:GetService"RunService".Stepped:connect(function()
+        if enabled and Plr.Character and Plr.Character:FindFirstChild("HumanoidRootPart") then
+            placemarker.CFrame = CFrame.new(Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor))
+        else
+            placemarker.CFrame = CFrame.new(0, 9999, 0)
+        end
+    end)
+ 
+    local mt = getrawmetatable(game)
+    local old = mt.__namecall
+    setreadonly(mt, false)
+    mt.__namecall = newcclosure(function(...)
+        local args = {...}
+        if enabled and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" then
+            args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor)
+            return old(unpack(args))
+        end
+        return old(...)
+    end)
+end)
+
+
+local Button = Section.Component("Button"," {KeyC}cframe/click to go faster",function()
+--cframe made from sloxic
  local Player = game:GetService'Players'.LocalPlayer;
  local UIS = game:GetService'UserInputService';
  UIS.InputBegan:connect(function(UserInput)
@@ -392,17 +322,10 @@
                  _G.Running = false
          end
  end)
-    end,
- })
- 
- 
- 
- 
- 
- local Button = PLAYER:CreateButton({
-    Name = "fly",
-    Callback = function()
- local plr = game.Players.LocalPlayer
+end)
+
+local Button = Section.Component("Button","fly",function()
+local plr = game.Players.LocalPlayer
  local mouse = plr:GetMouse()
   
          localplayer = plr
@@ -511,17 +434,13 @@
              end
          end)
          start()
-    end,
- })
- 
- 
- 
- 
- 
- 
- local Button = PLAYER:CreateButton({
-    Name = "cframe fly",
-    Callback = function()
+end)
+
+
+
+
+
+local Button = Section.Component("Button","cframe FLY",function()
  local Settings = {
      
      Speed = 15,
@@ -682,13 +601,14 @@
          Distance.Text = 0
      end	
  end)
-    end,
- })
- 
- local Button = PLAYER:CreateButton({
-    Name = "headless/korblox non fe :(",
-    Callback = function()
- local Main = Instance.new("ScreenGui")
+end)
+
+
+
+
+
+local Button = Section.Component("Button","headless & korblox | non FE",function()
+local Main = Instance.new("ScreenGui")
  local MainFrame = Instance.new("Frame")
  local UICorner = Instance.new("UICorner")
  local Korblox = Instance.new("TextButton")
@@ -756,24 +676,13 @@
  end)
  
  UICorner_3.Parent = Headless
-    end,
- })
- 
- 
- 
- 
- 
- local OTHER = Window:CreateTab("OTHER'S", 8709610734) 
- 
- local other = OTHER:CreateSection("OTHER'S")
- 
- 
- 
- 
- local Button = OTHER:CreateButton({
-    Name = "chat spy",
-    Callback = function()
- enabled = true
+end)
+
+
+
+
+local Button = Section.Component("Button","shoutout to whoever made this | chat spy",function()
+enabled = true
  spyOnMyself = true
  public = false
  publicItalics = true
@@ -830,50 +739,165 @@
  local chatFrame = player.PlayerGui.Chat.Frame
  chatFrame.ChatChannelParentFrame.Visible = true
  chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
-    end,
- })
- 
- 
- 
- 
- 
- 
- 
- local Button = OTHER:CreateButton({
-    Name = "noclip",
-    Callback = function()
- local plr = game.Players.LocalPlayer -- Player
+end)
+
+
+
+local Page = Main.Page("Player","3926305904",Vector2.new(924, 204),Vector2.new(36, 36))
+
+local Section = Page.Section("Player")
+
+
+
+
+local Button = Section.Component("Button","Bag All",function()
+  local bag = true
+        local takingbag = true
+        local Plr = game.Players.LocalPlayer
+        repeat wait(1)
+            if game.Players.LocalPlayer.Character:FindFirstChild("[BrownBag]") == nil then
+                repeat
+                    takingbag = true
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-314.580566, 51.1788902, -727.484558)
+                    wait()
+                    fireclickdetector(workspace.Ignored.Shop["[BrownBag] - $25"].ClickDetector)
+                until Plr.Backpack:FindFirstChild("[BrownBag]")
+                Plr.Backpack["[BrownBag]"].Parent = Plr.Character
+                takingbag = false
+            end
+        
+            if takingbag == false then
+                local chars
+                for i, v  in pairs(game.Players:GetPlayers()) do
+                    if v.Character and v.Character:FindFirstChild("Christmas_Sock") == nil and v.Character:FindFirstChild("FULLY_LOADED_CHAR") and v ~= Plr then
+                        chars = v.Character
+                        if Plr.Character:FindFirstChild("[BrownBag]") then
+                            Plr.Character["[BrownBag]"]:Activate()
+                        end
+                        Plr.Character.HumanoidRootPart.CFrame = v.Character.UpperTorso.CFrame * CFrame.new(0, 0, -2)
+                    end
+                    wait(0.005)
+                end
+                if not chars then
+                    bag = false
+                end
+            end
+        until bag == false
+end)
+
+
+
+local Button = Section.Component("Button","Free Fist KeyBind is {B}",function()
+local localPlayer       = game:GetService("Players").LocalPlayer
+local localCharacter    = localPlayer.Character
+local Mouse             = localPlayer:GetMouse()
+local FistControl       = false
+local LeftFist          = localCharacter.LeftHand
+local RightFist         = localCharacter.RightHand
+
+-- // Services
+local uis = game:GetService("UserInputService")
+
+-- // Coroutine Loop + Functions
+local loopFunction = function()
+    LeftFist.CFrame  = CFrame.new(Mouse.Hit.p)
+    RightFist.CFrame = CFrame.new(Mouse.Hit.p)
+end
+
+local Loop
+
+local Start = function()
+    Loop = game:GetService("RunService").Heartbeat:Connect(loopFunction)
+end
+
+local Pause = function()
+    Loop:Disconnect()
+end
+
+-- // Hotkeys
+uis.InputBegan:connect(function(Key)
+    if (Key.KeyCode == Enum.KeyCode.B) then
+        if (FistControl == false) then
+            FistControl = true
+            Start()
+            pcall(function()
+                localCharacter.RightHand.RightWrist:Remove()
+                localCharacter.LeftHand.LeftWrist:Remove()
+            end)
+        elseif (FistControl == true) then
+            FistControl = false
+            Pause()
+            local rightwrist  = Instance.new("Motor6D")
+            rightwrist.Name   = "RightWrist"
+            rightwrist.Parent = localCharacter.RightHand
+            rightwrist.C0     = CFrame.new(1.18422506e-07, -0.5009287, -6.81715525e-18, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+            rightwrist.C1     = CFrame.new(3.55267503e-07, 0.125045404, 5.92112528e-08, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+            rightwrist.Part0  = localCharacter.RightLowerArm
+            rightwrist.Part1  = localCharacter.RightHand
+
+            local leftwrist   = Instance.new("Motor6D")
+            leftwrist.Name    = "LeftWrist"
+            leftwrist.Parent  = localCharacter.LeftHand
+            leftwrist.C0      = CFrame.new(0.000475466368, -0.5009287, 7.59417072e-20, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+            leftwrist.C1      = CFrame.new(0.000475821638, 0.125045404, 5.92112528e-08, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+            leftwrist.Part0   = localCharacter.LeftLowerArm
+            leftwrist.Part1   = localCharacter.LeftHand
+        end
+    end
+end)
+end)
+
+
+
+local Button = Section.Component("Button","No Jump CoolDown",function()
+  if not game.IsLoaded(game) then 
+            game.Loaded.Wait(game.Loaded);
+        end
+    
+        local IsA = game.IsA;
+        local newindex = nil 
+    
+        newindex = hookmetamethod(game, "__newindex", function(self, Index, Value)
+            if not checkcaller() and IsA(self, "Humanoid") and Index == "JumpPower" then 
+                return
+            end
+    
+            return newindex(self, Index, Value);
+        end)
+end)
+
+
+local Button = Section.Component("Button","Tryhard Animation's",function()
+ while true do
+            local Animate = game.Players.LocalPlayer.Character.Animate
+            Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+            Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+            Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
+            Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+            Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+            Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083439238"
+            Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
+            game.Players.LocalPlayer.Character.Humanoid.Jump = false
+            wait(1)
+            end
+end)
+
+
+
+
+
+local Button = Section.Component("Button","Noclip Player | PATCHED FOR NOW!",function()
+local plr = game.Players.LocalPlayer -- Player
   
  local mode = "noclip"
   
- --[[ MODE:
+ 
      
-     The mode is what mode the noclip script is on. You must enter one of these values. CASE SENSITIVE.
-     
-     tempnoclip - Will allow you to walk through touched objects for 3 seconds before making them solid again. While you can walk through them they are semi-transparent
-     destroy - Will permanently destroy any touched objects
-     noclip - Will Allow you to walk through any touched object permanently
-     invis - Will make any touched object invisible.
-     
- --]]
+ 
   
- local HitPart = ""
+ local HitPart = "Torso"
   
- --[[ HITPART
-     
-     This Value is what part of your character will activate the noclip mode. You must enter one of the following values. CASE SENSITIVE.
-     BE AWARE OF WETHER YOU ARE PLAYING R15 OR R6 ANIMATED GAMES.
-     
-     Head - R15/R6
-     Torso - R6
-     HumanoidRootPart - R15 Torso
-     LeftLeg - R15
-     LeftFoot - R15
-     RightLeg - R15
-     RightFoot - R15
-     
- --]]
-  
+ 
  
   
   
@@ -964,16 +988,11 @@
      end
      
  end)
-    end,
- })
- 
- 
- 
- 
- 
- local Button = OTHER:CreateButton({
-    Name = "RGB/makes your game look purple",
-    Callback = function()
+end)
+
+
+
+local Button = Section.Component("Button","RGB | makes color chnages to your game",function()
  if not game:IsLoaded() then
      game.Loaded:Wait()
  end
@@ -1024,22 +1043,13 @@
          v.Color = Color3.fromRGB(185, 0, 185)
      end
  end
-    end,
- })
- 
- 
- 
- local AIMBOTTER = Window:CreateTab("ANTI LOCK", 8709610734)
- 
- local aimbotter = AIMBOTTER :CreateSection("ANTI LOCK")
- 
- 
- 
- local Button = AIMBOTTER:CreateButton({
-     Name = "sky aa/key {v}",
-     Callback = function()
-  -- BEST ANTI LOCK KEYBIND {V} 
-  getgenv().Underground = true
+end)
+
+
+
+
+local Button = Section.Component("Button","Sky aa/anti aim | streamble",function()
+ getgenv().Underground = true
   getgenv().UndergroundAmount = -999
   local OK = false
   local toggle = false
@@ -1079,18 +1089,13 @@
   end
   end
   end)
-     end,
-  })
- 
- 
- 
- 
- 
-  local Button = AIMBOTTER:CreateButton({
-     Name = "underground aa/key {z}",
-     Callback = function()
-  -- BEST ANTI LOCK KEYBIND {V} 
-  getgenv().Underground = true
+end)
+
+
+
+
+local Button = Section.Component("Button","underground aa/anti aim | streamble",function()
+ getgenv().Underground = true
   getgenv().UndergroundAmount = 999
   local OK = false
   local toggle = false
@@ -1130,49 +1135,15 @@
   end
   end
   end)
-     end,
-  })
- 
- 
- 
- 
- -- MORE COMING TO THE ANTI SECTION SOON!
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- local ANTILOCK = Window:CreateTab("CREDITS", 8709610734)
- 
- local antilock = ANTILOCK :CreateSection("CREDITS")
- 
- 
+end)
 
 
- 
- 
- 
- local Button = ANTILOCK:CreateButton({
-     Name = "CREDITS TO SH! FOR ROCKING SOLO ON THIS PROJECT!",
-     Callback = function()
-     -- The function that takes place when the button is pressed
-     end,
-  })
+local Page = Main.Page("Others | OP","3926305904",Vector2.new(924, 204),Vector2.new(36, 36))
+
+local Section = Page.Section("Others")
 
 
-
-
- local Button = OTHER:CreateButton({
-     Name = "anti stomp",
-     Callback = function()
+local Button = Section.Component("Button","anti stomp | key is {K}",function()
 game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
  if KeyPressed == "k" then
 	for L_170_forvar0, L_171_forvar1 in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
@@ -1182,15 +1153,11 @@ game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
 	end
 	end
 end)
+end)
 
-     end,
-  })
-  
-  
-  
-   local Button = OTHER:CreateButton({
-     Name = "full god mode",
-     Callback = function()
+
+
+local Button = Section.Component("Button","Full GOD MODE | cant shoot or use fists i think",function()
 local localPlayer = game:GetService('Players').LocalPlayer;
                 local localCharacter = localPlayer.Character;
                 localCharacter:FindFirstChildOfClass('Humanoid').Health = 0;
@@ -1207,32 +1174,28 @@ local localPlayer = game:GetService('Players').LocalPlayer;
                 lol.Parent = game.Workspace.Players
                 game.Players.LocalPlayer.Character:WaitForChild("BodyEffects")
                 game.Players.LocalPlayer.Character.BodyEffects.BreakingParts:Destroy()
-     end,
-  })
+end)
 
 
-  --not credits
-  
-  local Button = OTHER:CreateButton({
-    Name = "anti slow",
-    Callback = function()
-        game:GetService('RunService'):BindToRenderStep("Anti-Slow", 0 , function()
+
+
+
+local Button = Section.Component("Button","anti slow/no slow down",function()
+     game:GetService('RunService'):BindToRenderStep("Anti-Slow", 0 , function()
             if game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("NoWalkSpeed") then game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("NoWalkSpeed"):Destroy() end
             if game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("ReduceWalk") then game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("ReduceWalk"):Destroy() end
             if game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("NoJumping") then game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("NoJumping"):Destroy() end
             if game.Players.LocalPlayer.Character.BodyEffects.Reload.Value == true then game.Players.LocalPlayer.Character.BodyEffects.Reload.Value = false
             end
             end)        
-    end,
- })
+end)
 
+local Button = Section.Component("Button","Reach",function()
 
+end)
 
-
- local Button = PLAYER:CreateButton({
-    Name = "reach",
-    Callback = function()
-        game:GetService('RunService'):BindToRenderStep("Reach", 0 , function(value)
+local Button = Section.Component("Button","Reach",function()
+game:GetService('RunService'):BindToRenderStep("Reach", 0 , function(value)
             local success, err = pcall(function()
                 if game.Players.LocalPlayer.Character.BodyEffects.Attacking.Value == true then
                     for i,v in pairs(game:GetService('Players'):GetChildren()) do
@@ -1254,15 +1217,14 @@ local localPlayer = game:GetService('Players').LocalPlayer;
                 end
                 end)
             end)
-    end,
- })
+end)
 
 
 
- local Button = OTHER:CreateButton({
-    Name = "auto rob{rejoin to stop}",
-    Callback = function()
-        local humanoid = game.Players.LocalPlayer.Character.Humanoid
+
+
+local Button = Section.Component("Button","auto rob | rejoin to stop",function()
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
         local tool = game.Players.LocalPlayer.Backpack.Combat
         
         local function getMoneyAroundMe() 
@@ -1299,154 +1261,128 @@ local localPlayer = game:GetService('Players').LocalPlayer;
         end
         
         startAutoFarm()
-    end,
- })
-
- local Button = PLAYER:CreateButton({
-    Name = "bag all",
-    Callback = function()
-        local bag = true
-        local takingbag = true
-        local Plr = game.Players.LocalPlayer
-        repeat wait(1)
-            if game.Players.LocalPlayer.Character:FindFirstChild("[BrownBag]") == nil then
-                repeat
-                    takingbag = true
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-314.580566, 51.1788902, -727.484558)
-                    wait()
-                    fireclickdetector(workspace.Ignored.Shop["[BrownBag] - $25"].ClickDetector)
-                until Plr.Backpack:FindFirstChild("[BrownBag]")
-                Plr.Backpack["[BrownBag]"].Parent = Plr.Character
-                takingbag = false
-            end
-        
-            if takingbag == false then
-                local chars
-                for i, v  in pairs(game.Players:GetPlayers()) do
-                    if v.Character and v.Character:FindFirstChild("Christmas_Sock") == nil and v.Character:FindFirstChild("FULLY_LOADED_CHAR") and v ~= Plr then
-                        chars = v.Character
-                        if Plr.Character:FindFirstChild("[BrownBag]") then
-                            Plr.Character["[BrownBag]"]:Activate()
-                        end
-                        Plr.Character.HumanoidRootPart.CFrame = v.Character.UpperTorso.CFrame * CFrame.new(0, 0, -2)
-                    end
-                    wait(0.005)
-                end
-                if not chars then
-                    bag = false
-                end
-            end
-        until bag == false
-    end,
- })
- 
-
-
- local Button = PLAYER:CreateButton({
-    Name = "free fist/key {B}",
-    Callback = function()
--- // Variables
-local localPlayer       = game:GetService("Players").LocalPlayer
-local localCharacter    = localPlayer.Character
-local Mouse             = localPlayer:GetMouse()
-local FistControl       = false
-local LeftFist          = localCharacter.LeftHand
-local RightFist         = localCharacter.RightHand
-
--- // Services
-local uis = game:GetService("UserInputService")
-
--- // Coroutine Loop + Functions
-local loopFunction = function()
-    LeftFist.CFrame  = CFrame.new(Mouse.Hit.p)
-    RightFist.CFrame = CFrame.new(Mouse.Hit.p)
-end
-
-local Loop
-
-local Start = function()
-    Loop = game:GetService("RunService").Heartbeat:Connect(loopFunction)
-end
-
-local Pause = function()
-    Loop:Disconnect()
-end
-
--- // Hotkeys
-uis.InputBegan:connect(function(Key)
-    if (Key.KeyCode == Enum.KeyCode.B) then
-        if (FistControl == false) then
-            FistControl = true
-            Start()
-            pcall(function()
-                localCharacter.RightHand.RightWrist:Remove()
-                localCharacter.LeftHand.LeftWrist:Remove()
-            end)
-        elseif (FistControl == true) then
-            FistControl = false
-            Pause()
-            local rightwrist  = Instance.new("Motor6D")
-            rightwrist.Name   = "RightWrist"
-            rightwrist.Parent = localCharacter.RightHand
-            rightwrist.C0     = CFrame.new(1.18422506e-07, -0.5009287, -6.81715525e-18, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-            rightwrist.C1     = CFrame.new(3.55267503e-07, 0.125045404, 5.92112528e-08, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-            rightwrist.Part0  = localCharacter.RightLowerArm
-            rightwrist.Part1  = localCharacter.RightHand
-
-            local leftwrist   = Instance.new("Motor6D")
-            leftwrist.Name    = "LeftWrist"
-            leftwrist.Parent  = localCharacter.LeftHand
-            leftwrist.C0      = CFrame.new(0.000475466368, -0.5009287, 7.59417072e-20, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-            leftwrist.C1      = CFrame.new(0.000475821638, 0.125045404, 5.92112528e-08, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-            leftwrist.Part0   = localCharacter.LeftLowerArm
-            leftwrist.Part1   = localCharacter.LeftHand
-        end
-    end
 end)
-    end,
- })
-
- local Button = OTHER:CreateButton({
-    Name = "remove jump cooldown",
-    Callback = function()
-        if not game.IsLoaded(game) then 
-            game.Loaded.Wait(game.Loaded);
-        end
-    
-        local IsA = game.IsA;
-        local newindex = nil 
-    
-        newindex = hookmetamethod(game, "__newindex", function(self, Index, Value)
-            if not checkcaller() and IsA(self, "Humanoid") and Index == "JumpPower" then 
-                return
-            end
-    
-            return newindex(self, Index, Value);
-        end)
-    end,
- })
-
-
- local Button = PLAYER:CreateButton({
-    Name = "tryhard animations",
-    Callback = function()
-        while true do
-            local Animate = game.Players.LocalPlayer.Character.Animate
-            Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
-            Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782841498"
-            Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
-            Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
-            Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
-            Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083439238"
-            Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
-            game.Players.LocalPlayer.Character.Humanoid.Jump = false
-            wait(1)
-            end
-    end,
- })
 
 
 
 
- Rayfield:LoadConfiguration()
+local Button = Section.Component("Button","Esp | with no lag drops/spikes",function()
+local settings = {
+   defaultcolor = Color3.fromRGB(190,20,190),
+   teamcheck = false
+};
  
+-- services
+local runService = game:GetService("RunService");
+local players = game:GetService("Players");
+ 
+-- variables
+local localPlayer = players.LocalPlayer;
+local camera = workspace.CurrentCamera;
+ 
+-- functions
+local newVector2, newColor3, newDrawing = Vector2.new, Color3.new, Drawing.new;
+local tan, rad = math.tan, math.rad;
+local round = function(...) local a = {}; for i,v in next, table.pack(...) do a[i] = math.round(v); end return unpack(a); end;
+local wtvp = function(...) local a, b = camera.WorldToViewportPoint(camera, ...) return newVector2(a.X, a.Y), b, a.Z end;
+ 
+local espCache = {};
+local function createEsp(player)
+   local drawings = {};
+ 
+   drawings.box = newDrawing("Square");
+   drawings.box.Thickness = 1;
+   drawings.box.Filled = false;
+   drawings.box.Color = settings.defaultcolor;
+   drawings.box.Visible = false;
+   drawings.box.ZIndex = 2;
+ 
+   drawings.boxoutline = newDrawing("Square");
+   drawings.boxoutline.Thickness = 3;
+   drawings.boxoutline.Filled = false;
+   drawings.boxoutline.Color = newColor3();
+   drawings.boxoutline.Visible = false;
+   drawings.boxoutline.ZIndex = 1;
+ 
+   espCache[player] = drawings;
+end
+ 
+local function removeEsp(player)
+   if rawget(espCache, player) then
+       for _, drawing in next, espCache[player] do
+           drawing:Remove();
+       end
+       espCache[player] = nil;
+   end
+end
+ 
+local function updateEsp(player, esp)
+   local character = player and player.Character;
+   if character then
+       local cframe = character:GetModelCFrame();
+       local position, visible, depth = wtvp(cframe.Position);
+       esp.box.Visible = visible;
+       esp.boxoutline.Visible = visible;
+ 
+       if cframe and visible then
+           local scaleFactor = 1 / (depth * tan(rad(camera.FieldOfView / 2)) * 2) * 1000;
+           local width, height = round(4 * scaleFactor, 5 * scaleFactor);
+           local x, y = round(position.X, position.Y);
+ 
+           esp.box.Size = newVector2(width, height);
+           esp.box.Position = newVector2(round(x - width / 2, y - height / 2));
+           esp.box.Color = settings.teamcolor and player.TeamColor.Color or settings.defaultcolor;
+ 
+           esp.boxoutline.Size = esp.box.Size;
+           esp.boxoutline.Position = esp.box.Position;
+       end
+   else
+       esp.box.Visible = false;
+       esp.boxoutline.Visible = false;
+   end
+end
+ 
+-- main
+for _, player in next, players:GetPlayers() do
+   if player ~= localPlayer then
+       createEsp(player);
+   end
+end
+ 
+players.PlayerAdded:Connect(function(player)
+   createEsp(player);
+end);
+ 
+players.PlayerRemoving:Connect(function(player)
+   removeEsp(player);
+end)
+ 
+runService:BindToRenderStep("esp", Enum.RenderPriority.Camera.Value, function()
+   for player, drawings in next, espCache do
+       if settings.teamcheck and player.Team == localPlayer.Team then
+           continue;
+       end
+ 
+       if drawings and player ~= localPlayer then
+           updateEsp(player, drawings);
+       end
+   end
+end)
+end)
+
+
+
+local Page = Main.Page("Credits","3926305904",Vector2.new(924, 204),Vector2.new(36, 36))
+
+local Section = Page.Section("Credits")
+
+
+local Button = Section.Component("Button","",function()
+
+end)
+
+
+
+local Logs = Main.Logs("SloxicWare.CC")
+
+
