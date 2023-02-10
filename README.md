@@ -1,32 +1,25 @@
-getgenv().LibTheme = {
-    MainColor = Color3.fromRGB(40,20,40);
-    BrighterMainColor = Color3.fromRGB(30,12,42);
-    IconsColor = Color3.fromRGB(0,111,111);
-    Accent = Color3.fromRGB(0,100,255);
-    DarkText = Color3.fromRGB(170,170,170);
-    BrightText = Color3.fromRGB(145,145,145);
-    Font = "Gotham";
-    SoundVolume = 0.0;
-    HideKey = "RightShift"
-}
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/cat"))() --you can go into the github link and copy all of it and modify it for yourself.
+local Window = Library:CreateWindow("SloxicWare.cc | dont skid bitch .gg/6YePnPSb", Vector2.new(492, 598), Enum.KeyCode.RightControl) --you can change your UI keybind
+local AIMLOCK = Window:CreateTab("Main") --you can rename this tab to whatever you want --you can also change the tabs code, for example "AimingTab" can be changed to "FunnyCoolTab" etc.
 
 
 
 
-local Library = loadstring(game:HttpGet("https://github.com/slf0Dev/Ocerium_Project/raw/main/Ocerium%20Special%20ui"))()
 
-local Main = Library.Main("SloxicWare | Priv Request")
 
-local Page = Main.Page("Main","3926305904",Vector2.new(924, 204),Vector2.new(36, 36))
+local aimlock = AIMLOCK:CreateSector("Main", "left")  --you can  change the section code, for example "testsection" can be changed to "FunnyCoolSection" etc.
 
-local Section = Page.Section("Main Stuff")
 
-local Button = Section.Component("Button","Hood Modded AimLock | OP",function()
-  local Settings = { AimLock = { Enabled = true, Aimlockkey = "q", Prediction = 0.120, Aimpart = 'LowerTorso', Notifications = true }, Settings = { Thickness = 2.5, Transparency = 1, Color = Color3.fromRGB(190, 20, 190), FOV = false } } local CurrentCamera = game:GetService("Workspace").CurrentCamera local Inset = game:GetService("GuiService"):GetGuiInset().Y local RunService = game:GetService("RunService") local Mouse = game.Players.LocalPlayer:GetMouse() local LocalPlayer = game.Players.LocalPlayer local Line = Drawing.new("Line") local Circle = Drawing.new("Circle") local Plr = game.Players.LocalPlayer Mouse.KeyDown:Connect(function(KeyPressed) if KeyPressed == (Settings.AimLock.Aimlockkey) then if Settings.AimLock.Enabled == true then Settings.AimLock.Enabled = false if Settings.AimLock.Notifications == true then Plr = FindClosestPlayer() game.StarterGui:SetCore("SendNotification", { Title = "use sloxic skids | dont run dont trip", Text = "UNLOCKED" }) end else Plr = FindClosestPlayer() Settings.AimLock.Enabled = true if Settings.AimLock.Notifications == true then game.StarterGui:SetCore("SendNotification", { Title = "use sloxic skids | dont run dont trip", Text = "Locked On : " .. tostring(Plr.Character.Humanoid.DisplayName) }) end end end end) function FindClosestPlayer() local ClosestDistance, ClosestPlayer = math.huge, nil; for _, Player in next, game:GetService("Players"):GetPlayers() do if Player ~= LocalPlayer then local Character = Player.Character if Character and Character.Humanoid.Health > 1 then local Position, IsVisibleOnViewPort = CurrentCamera:WorldToViewportPoint(Character.HumanoidRootPart .Position) if IsVisibleOnViewPort then local Distance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(Position.X, Position.Y)).Magnitude if Distance < ClosestDistance then ClosestPlayer = Player ClosestDistance = Distance end end end end end return ClosestPlayer, ClosestDistance end RunService.Heartbeat:connect(function() if Settings.AimLock.Enabled == true then local Vector = CurrentCamera:WorldToViewportPoint(Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction)) Line.Color = Settings.Settings.Color Line.Transparency = Settings.Settings .Transparency Line.Thickness = Settings.Settings .Thickness Line.From = Vector2.new(Mouse.X, Mouse.Y + Inset) Line.To = Vector2.new(Vector.X, Vector.Y) Line.Visible = true Circle.Position = Vector2.new(Mouse.X, Mouse.Y + Inset) Circle.Visible = Settings.Settings.FOV Circle.Thickness = 15.5 Circle.Thickness = 15 Circle.Radius = 450 Circle.Color = Settings.Settings.Color elseif Settings.AimLock.FOV == true then Circle.Visible = true else Circle.Visible = false Line.Visible = false end end) local mt = getrawmetatable(game) local old = mt.__namecall setreadonly(mt, false) mt.__namecall = newcclosure(function(...) local args = {...} if Settings.AimLock.Enabled and getnamecallmethod() == "FireServer" and args[2] == "MousePos" then args[3] = Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction) return old(unpack(args)) end return old(...) end)
+
+local cool = AIMLOCK:CreateSector("Others", "Right")
+
+local Player = AIMLOCK:CreateSector("Player", "Left")
+
+aimlock:AddButton("Hood Modded Aimlock/key {Q}", function(IhateGayPeople)
+ local Settings = { AimLock = { Enabled = true, Aimlockkey = "q", Prediction = 0.120, Aimpart = 'LowerTorso', Notifications = true }, Settings = { Thickness = 2.5, Transparency = 1, Color = Color3.fromRGB(190, 20, 190), FOV = false } } local CurrentCamera = game:GetService("Workspace").CurrentCamera local Inset = game:GetService("GuiService"):GetGuiInset().Y local RunService = game:GetService("RunService") local Mouse = game.Players.LocalPlayer:GetMouse() local LocalPlayer = game.Players.LocalPlayer local Line = Drawing.new("Line") local Circle = Drawing.new("Circle") local Plr = game.Players.LocalPlayer Mouse.KeyDown:Connect(function(KeyPressed) if KeyPressed == (Settings.AimLock.Aimlockkey) then if Settings.AimLock.Enabled == true then Settings.AimLock.Enabled = false if Settings.AimLock.Notifications == true then Plr = FindClosestPlayer() game.StarterGui:SetCore("SendNotification", { Title = "use sloxic skids | dont run dont trip", Text = "UNLOCKED" }) end else Plr = FindClosestPlayer() Settings.AimLock.Enabled = true if Settings.AimLock.Notifications == true then game.StarterGui:SetCore("SendNotification", { Title = "use sloxic skids | dont run dont trip", Text = "Locked On : " .. tostring(Plr.Character.Humanoid.DisplayName) }) end end end end) function FindClosestPlayer() local ClosestDistance, ClosestPlayer = math.huge, nil; for _, Player in next, game:GetService("Players"):GetPlayers() do if Player ~= LocalPlayer then local Character = Player.Character if Character and Character.Humanoid.Health > 1 then local Position, IsVisibleOnViewPort = CurrentCamera:WorldToViewportPoint(Character.HumanoidRootPart .Position) if IsVisibleOnViewPort then local Distance = (Vector2.new(Mouse.X, Mouse.Y) - Vector2.new(Position.X, Position.Y)).Magnitude if Distance < ClosestDistance then ClosestPlayer = Player ClosestDistance = Distance end end end end end return ClosestPlayer, ClosestDistance end RunService.Heartbeat:connect(function() if Settings.AimLock.Enabled == true then local Vector = CurrentCamera:WorldToViewportPoint(Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction)) Line.Color = Settings.Settings.Color Line.Transparency = Settings.Settings .Transparency Line.Thickness = Settings.Settings .Thickness Line.From = Vector2.new(Mouse.X, Mouse.Y + Inset) Line.To = Vector2.new(Vector.X, Vector.Y) Line.Visible = true Circle.Position = Vector2.new(Mouse.X, Mouse.Y + Inset) Circle.Visible = Settings.Settings.FOV Circle.Thickness = 15.5 Circle.Thickness = 15 Circle.Radius = 450 Circle.Color = Settings.Settings.Color elseif Settings.AimLock.FOV == true then Circle.Visible = true else Circle.Visible = false Line.Visible = false end end) local mt = getrawmetatable(game) local old = mt.__namecall setreadonly(mt, false) mt.__namecall = newcclosure(function(...) local args = {...} if Settings.AimLock.Enabled and getnamecallmethod() == "FireServer" and args[2] == "MousePos" then args[3] = Plr.Character[Settings.AimLock.Aimpart].Position + (Plr.Character[Settings.AimLock.Aimpart].Velocity * Settings.AimLock.Prediction) return old(unpack(args)) end return old(...) end)
 end)
 
-
-local Button = Section.Component("Button","aimlock",function()
+aimlock:AddButton("aimolck | key {E}", function(IhateGayPeople)
 --this is from sloxic dont skid fat bitch
 local CC = game:GetService"Workspace".CurrentCamera
     local Plr
@@ -302,8 +295,7 @@ end)
     end)
 end)
 
-
-local Button = Section.Component("Button"," {KeyC}cframe/click to go faster",function()
+aimlock:AddButton("Cframe | key {C}", function(IhateGayPeople)
 --cframe made from sloxic
  local Player = game:GetService'Players'.LocalPlayer;
  local UIS = game:GetService'UserInputService';
@@ -324,7 +316,8 @@ local Button = Section.Component("Button"," {KeyC}cframe/click to go faster",fun
  end)
 end)
 
-local Button = Section.Component("Button","fly",function()
+
+aimlock:AddButton("Fly | key {X}", function(IhateGayPeople)
 local plr = game.Players.LocalPlayer
  local mouse = plr:GetMouse()
   
@@ -436,12 +429,8 @@ local plr = game.Players.LocalPlayer
          start()
 end)
 
-
-
-
-
-local Button = Section.Component("Button","cframe FLY",function()
- local Settings = {
+cool:AddButton("Cframe fly | key {T}", function(IhateGayPeople)
+local Settings = {
      
      Speed = 15,
      SprintSpeed = 15,
@@ -601,13 +590,78 @@ local Button = Section.Component("Button","cframe FLY",function()
          Distance.Text = 0
      end	
  end)
+
+end)
+
+Player:AddButton("FreeFist | Key {B}", function(IhateGayPeople)
+local localPlayer       = game:GetService("Players").LocalPlayer
+local localCharacter    = localPlayer.Character
+local Mouse             = localPlayer:GetMouse()
+local FistControl       = false
+local LeftFist          = localCharacter.LeftHand
+local RightFist         = localCharacter.RightHand
+
+-- // Services
+local uis = game:GetService("UserInputService")
+
+-- // Coroutine Loop + Functions
+local loopFunction = function()
+    LeftFist.CFrame  = CFrame.new(Mouse.Hit.p)
+    RightFist.CFrame = CFrame.new(Mouse.Hit.p)
+end
+
+local Loop
+
+local Start = function()
+    Loop = game:GetService("RunService").Heartbeat:Connect(loopFunction)
+end
+
+local Pause = function()
+    Loop:Disconnect()
+end
+
+-- // Hotkeys
+uis.InputBegan:connect(function(Key)
+    if (Key.KeyCode == Enum.KeyCode.B) then
+        if (FistControl == false) then
+            FistControl = true
+            Start()
+            pcall(function()
+                localCharacter.RightHand.RightWrist:Remove()
+                localCharacter.LeftHand.LeftWrist:Remove()
+            end)
+        elseif (FistControl == true) then
+            FistControl = false
+            Pause()
+            local rightwrist  = Instance.new("Motor6D")
+            rightwrist.Name   = "RightWrist"
+            rightwrist.Parent = localCharacter.RightHand
+            rightwrist.C0     = CFrame.new(1.18422506e-07, -0.5009287, -6.81715525e-18, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+            rightwrist.C1     = CFrame.new(3.55267503e-07, 0.125045404, 5.92112528e-08, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+            rightwrist.Part0  = localCharacter.RightLowerArm
+            rightwrist.Part1  = localCharacter.RightHand
+
+            local leftwrist   = Instance.new("Motor6D")
+            leftwrist.Name    = "LeftWrist"
+            leftwrist.Parent  = localCharacter.LeftHand
+            leftwrist.C0      = CFrame.new(0.000475466368, -0.5009287, 7.59417072e-20, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+            leftwrist.C1      = CFrame.new(0.000475821638, 0.125045404, 5.92112528e-08, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+            leftwrist.Part0   = localCharacter.LeftLowerArm
+            leftwrist.Part1   = localCharacter.LeftHand
+        end
+    end
+end)
 end)
 
 
 
 
 
-local Button = Section.Component("Button","headless & korblox | non FE",function()
+
+
+
+
+cool:AddButton("Headless & Korblox | Non Fe", function(IhateGayPeople)
 local Main = Instance.new("ScreenGui")
  local MainFrame = Instance.new("Frame")
  local UICorner = Instance.new("UICorner")
@@ -676,181 +730,15 @@ local Main = Instance.new("ScreenGui")
  end)
  
  UICorner_3.Parent = Headless
+
 end)
 
 
 
 
-local Button = Section.Component("Button","shoutout to whoever made this | chat spy",function()
-enabled = true
- spyOnMyself = true
- public = false
- publicItalics = true
- privateProperties = {
-     Color = Color3.fromRGB(0,255,255); 
-     Font = Enum.Font.SourceSansBold;
-     TextSize = 18;
- }
- local StarterGui = game:GetService("StarterGui")
- local Players = game:GetService("Players")
- local player = Players.LocalPlayer
- local saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
- local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
- local instance = (_G.chatSpyInstance or 0) + 1
- _G.chatSpyInstance = instance
- 
- local function onChatted(p,msg)
-     if _G.chatSpyInstance == instance then
-         if p==player and msg:lower():sub(1,6)=="/e spy" then
-             enabled = not enabled
-             wait(0.3)
-             privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
-             StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
-         elseif enabled and (spyOnMyself==true or p~=player) then
-             msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
-             local hidden = true
-             local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
-                 if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
-                     hidden = false
-                 end
-             end)
-             wait(1)
-             conn:Disconnect()
-             if hidden and enabled then
-                 if public then
-                     saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
-                 else
-                     privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
-                     StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
-                 end
-             end
-         end
-     end
- end
- 
- for _,p in ipairs(Players:GetPlayers()) do
-     p.Chatted:Connect(function(msg) onChatted(p,msg) end)
- end
- Players.PlayerAdded:Connect(function(p)
-     p.Chatted:Connect(function(msg) onChatted(p,msg) end)
- end)
- privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
- StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
- local chatFrame = player.PlayerGui.Chat.Frame
- chatFrame.ChatChannelParentFrame.Visible = true
- chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
-end)
 
-
-
-local Page = Main.Page("Player","3926305904",Vector2.new(924, 204),Vector2.new(36, 36))
-
-local Section = Page.Section("Player")
-
-
-
-
-local Button = Section.Component("Button","Bag All",function()
-  local bag = true
-        local takingbag = true
-        local Plr = game.Players.LocalPlayer
-        repeat wait(1)
-            if game.Players.LocalPlayer.Character:FindFirstChild("[BrownBag]") == nil then
-                repeat
-                    takingbag = true
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-314.580566, 51.1788902, -727.484558)
-                    wait()
-                    fireclickdetector(workspace.Ignored.Shop["[BrownBag] - $25"].ClickDetector)
-                until Plr.Backpack:FindFirstChild("[BrownBag]")
-                Plr.Backpack["[BrownBag]"].Parent = Plr.Character
-                takingbag = false
-            end
-        
-            if takingbag == false then
-                local chars
-                for i, v  in pairs(game.Players:GetPlayers()) do
-                    if v.Character and v.Character:FindFirstChild("Christmas_Sock") == nil and v.Character:FindFirstChild("FULLY_LOADED_CHAR") and v ~= Plr then
-                        chars = v.Character
-                        if Plr.Character:FindFirstChild("[BrownBag]") then
-                            Plr.Character["[BrownBag]"]:Activate()
-                        end
-                        Plr.Character.HumanoidRootPart.CFrame = v.Character.UpperTorso.CFrame * CFrame.new(0, 0, -2)
-                    end
-                    wait(0.005)
-                end
-                if not chars then
-                    bag = false
-                end
-            end
-        until bag == false
-end)
-
-
-
-local Button = Section.Component("Button","Free Fist KeyBind is {B}",function()
-local localPlayer       = game:GetService("Players").LocalPlayer
-local localCharacter    = localPlayer.Character
-local Mouse             = localPlayer:GetMouse()
-local FistControl       = false
-local LeftFist          = localCharacter.LeftHand
-local RightFist         = localCharacter.RightHand
-
--- // Services
-local uis = game:GetService("UserInputService")
-
--- // Coroutine Loop + Functions
-local loopFunction = function()
-    LeftFist.CFrame  = CFrame.new(Mouse.Hit.p)
-    RightFist.CFrame = CFrame.new(Mouse.Hit.p)
-end
-
-local Loop
-
-local Start = function()
-    Loop = game:GetService("RunService").Heartbeat:Connect(loopFunction)
-end
-
-local Pause = function()
-    Loop:Disconnect()
-end
-
--- // Hotkeys
-uis.InputBegan:connect(function(Key)
-    if (Key.KeyCode == Enum.KeyCode.B) then
-        if (FistControl == false) then
-            FistControl = true
-            Start()
-            pcall(function()
-                localCharacter.RightHand.RightWrist:Remove()
-                localCharacter.LeftHand.LeftWrist:Remove()
-            end)
-        elseif (FistControl == true) then
-            FistControl = false
-            Pause()
-            local rightwrist  = Instance.new("Motor6D")
-            rightwrist.Name   = "RightWrist"
-            rightwrist.Parent = localCharacter.RightHand
-            rightwrist.C0     = CFrame.new(1.18422506e-07, -0.5009287, -6.81715525e-18, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-            rightwrist.C1     = CFrame.new(3.55267503e-07, 0.125045404, 5.92112528e-08, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-            rightwrist.Part0  = localCharacter.RightLowerArm
-            rightwrist.Part1  = localCharacter.RightHand
-
-            local leftwrist   = Instance.new("Motor6D")
-            leftwrist.Name    = "LeftWrist"
-            leftwrist.Parent  = localCharacter.LeftHand
-            leftwrist.C0      = CFrame.new(0.000475466368, -0.5009287, 7.59417072e-20, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-            leftwrist.C1      = CFrame.new(0.000475821638, 0.125045404, 5.92112528e-08, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-            leftwrist.Part0   = localCharacter.LeftLowerArm
-            leftwrist.Part1   = localCharacter.LeftHand
-        end
-    end
-end)
-end)
-
-
-
-local Button = Section.Component("Button","No Jump CoolDown",function()
-  if not game.IsLoaded(game) then 
+cool:AddButton("no Jump CoolDown", function(IhateGayPeople)
+ if not game.IsLoaded(game) then 
             game.Loaded.Wait(game.Loaded);
         end
     
@@ -867,8 +755,15 @@ local Button = Section.Component("Button","No Jump CoolDown",function()
 end)
 
 
-local Button = Section.Component("Button","Tryhard Animation's",function()
- while true do
+
+
+
+
+
+
+
+Player:AddButton("TryHard Animations", function(IhateGayPeople)
+while true do
             local Animate = game.Players.LocalPlayer.Character.Animate
             Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
             Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782841498"
@@ -884,116 +779,8 @@ end)
 
 
 
-
-
-local Button = Section.Component("Button","Noclip Player | PATCHED FOR NOW!",function()
-local plr = game.Players.LocalPlayer -- Player
-  
- local mode = "noclip"
-  
- 
-     
- 
-  
- local HitPart = "Torso"
-  
- 
- 
-  
-  
- local enabled = true
-  
- if (plr ~= nil) then
-     
-     print("Activating NoClip...")
-     enabled = true
-     
-             
-     if (mode ~= "TEMPNOCLIP" and mode ~= "tempnoclip" and mode ~= "DESTROY" and mode ~= "destroy" and mode ~= "NOCLIP" and mode ~= "noclip" and mode ~= "INVIS" and mode ~= "invis") then
-         print ("Invalid mode! Setting to noclip by default!")
-         mode = "noclip"
-     else
-         print("Succesfully Changed Mode! Mode: " ..mode)        
-     end
-     
-     if (HitPart ~= "Head" and HitPart ~= "Torso" and HitPart ~= "HumanoidRootPart" and HitPart ~= "LeftHand" and HitPart ~= "LeftFoot" and HitPart ~= "RightFoot" and HitPart ~= "RightHand") then
-         print ("Invalid Hit Object! Setting to head by default!")
-         HitPart = "Head"
-     else
-         print ("Successfully Changed Hit Object! Object: " ..HitPart)
-     end
-     
-     print("Noclip succesfully activated!")
-     
- end
-  
- plr.Chatted:connect(function(msg)
-     
-     if (msg == string.lower("noclip disable")) then
-         print("Disabling noclip")
-         enabled = false     
-     end
-     
-     if (msg == string.lower("noclip enable")) then
-         print("Enabling noclip")
-         enabled = true
-     end
- end)
-  
- plr.Character[HitPart].Touched:connect(function(obj)
-     
-     if(obj:IsA("MeshPart") or obj:IsA("Part") or obj:IsA("WedgePart") or obj:IsA("UnionOperation")) then
-         if(obj.CanCollide == true) then
-             
-             if (mode == "TEMPNOCLIP" or mode == "tempnoclip") then  
-                 
-                 if enabled == true then             
-                     local ogtransp = obj.Transparency
-                     
-                     obj.CanCollide = false
-                     obj.Transparency = 0.5
-                     
-                     wait(4)
-                     
-                     obj.CanCollide = true
-                     obj.Transparency = ogtransp
-                 end
-                 
-             end
-             
-             
-             if (mode == "DESTROY" or mode == "destroy") then
-                 if enabled == true then
-                     obj:remove()
-                 end
-             end
-             
-             if (mode == "NOCLIP" or mode == "noclip") then
-                 if enabled == true then
-                     obj.CanCollide = false
-                 end
-             end
-             
-             if (mode == "INVIS" or mode == "invis") then
-                 if enabled == true then
-                     obj.Transparency = 0.8
-                     else
-                 end
-             end
-             
-         end
-         
-     else
-         print("Not Available obj")
-     end
-     
- end)
-end)
-
-
-
-local Button = Section.Component("Button","RGB | makes color chnages to your game",function()
- if not game:IsLoaded() then
+cool:AddButton("RGB | higher FPS", function(IhateGayPeople)
+if not game:IsLoaded() then
      game.Loaded:Wait()
  end
  wait()
@@ -1047,9 +834,8 @@ end)
 
 
 
-
-local Button = Section.Component("Button","Sky aa/anti aim | streamble",function()
- getgenv().Underground = true
+Player:AddButton("AntiLock | Key {V}", function(IhateGayPeople)
+getgenv().Underground = true
   getgenv().UndergroundAmount = -999
   local OK = false
   local toggle = false
@@ -1092,58 +878,7 @@ local Button = Section.Component("Button","Sky aa/anti aim | streamble",function
 end)
 
 
-
-
-local Button = Section.Component("Button","underground aa/anti aim | streamble",function()
- getgenv().Underground = true
-  getgenv().UndergroundAmount = 999
-  local OK = false
-  local toggle = false
-   
-  local function Notify(text)
-          game:GetService("StarterGui"):SetCore("SendNotification",
-          {
-              Title = "VUX LOVES YOU",
-              Text = text,
-              Duration = 1,
-              Button1 = ""
-          }
-          )
-      end
-   
-  game:GetService("RunService").heartbeat:Connect(function()
-      if OK == true then
-      if getgenv().Underground ~= false then 
-      local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
-      game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(-999,-         getgenv().UndergroundAmount,-999) 
-      game:GetService("RunService").RenderStepped:Wait()
-      game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = vel
-      end
-      end
-  end)
-   
-  game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
-   if KeyPressed == "z" then
-       if toggle == false then
-  toggle = true
-              OK = true
-  Notify('anti on >:)')
-  else
-  toggle = false
-          OK = false
-  Notify('anti  off >:(')
-  end
-  end
-  end)
-end)
-
-
-local Page = Main.Page("Others | OP","3926305904",Vector2.new(924, 204),Vector2.new(36, 36))
-
-local Section = Page.Section("Others")
-
-
-local Button = Section.Component("Button","anti stomp | key is {K}",function()
+Player:AddButton("Dh force Reset | Key {K}", function(IhateGayPeople)
 game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
  if KeyPressed == "k" then
 	for L_170_forvar0, L_171_forvar1 in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
@@ -1157,7 +892,8 @@ end)
 
 
 
-local Button = Section.Component("Button","Full GOD MODE | cant shoot or use fists i think",function()
+
+cool:AddButton("GodMode | No Key", function(IhateGayPeople)
 local localPlayer = game:GetService('Players').LocalPlayer;
                 local localCharacter = localPlayer.Character;
                 localCharacter:FindFirstChildOfClass('Humanoid').Health = 0;
@@ -1178,10 +914,8 @@ end)
 
 
 
-
-
-local Button = Section.Component("Button","anti slow/no slow down",function()
-     game:GetService('RunService'):BindToRenderStep("Anti-Slow", 0 , function()
+cool:AddButton("No Slow Down | No Key}", function(IhateGayPeople)
+   game:GetService('RunService'):BindToRenderStep("Anti-Slow", 0 , function()
             if game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("NoWalkSpeed") then game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("NoWalkSpeed"):Destroy() end
             if game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("ReduceWalk") then game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("ReduceWalk"):Destroy() end
             if game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("NoJumping") then game.Players.LocalPlayer.Character.BodyEffects.Movement:FindFirstChild("NoJumping"):Destroy() end
@@ -1190,11 +924,10 @@ local Button = Section.Component("Button","anti slow/no slow down",function()
             end)        
 end)
 
-local Button = Section.Component("Button","Reach",function()
 
-end)
 
-local Button = Section.Component("Button","Reach",function()
+
+cool:AddButton("Reach | No Key", function(IhateGayPeople)
 game:GetService('RunService'):BindToRenderStep("Reach", 0 , function(value)
             local success, err = pcall(function()
                 if game.Players.LocalPlayer.Character.BodyEffects.Attacking.Value == true then
@@ -1223,7 +956,8 @@ end)
 
 
 
-local Button = Section.Component("Button","auto rob | rejoin to stop",function()
+
+cool:AddButton("Auto Farm | No Key", function(IhateGayPeople)
 local humanoid = game.Players.LocalPlayer.Character.Humanoid
         local tool = game.Players.LocalPlayer.Backpack.Combat
         
@@ -1264,9 +998,7 @@ local humanoid = game.Players.LocalPlayer.Character.Humanoid
 end)
 
 
-
-
-local Button = Section.Component("Button","Esp | with no lag drops/spikes",function()
+player:AddButton("ESP | No key", function(IhateGayPeople)
 local settings = {
    defaultcolor = Color3.fromRGB(190,20,190),
    teamcheck = false
@@ -1370,19 +1102,14 @@ runService:BindToRenderStep("esp", Enum.RenderPriority.Camera.Value, function()
 end)
 end)
 
+ColorToggle:AddColorpicker(Color3.fromRGB(75, 0,130), function(ztx)
+   
+end)
 
-
-local Page = Main.Page("Credits","3926305904",Vector2.new(924, 204),Vector2.new(36, 36))
-
-local Section = Page.Section("Credits")
-
-
-local Button = Section.Component("Button","",function()
+local ToggleBind = testSection:AddToggle("Keybind w/Toggle", false, function(e)
 
 end)
 
+ToggleBind:AddKeybind(RightShift)
 
-
-local Logs = Main.Logs("SloxicWare.CC")
-
-
+AimingTab:CreateConfigSystem("right") --this is the config system
