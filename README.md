@@ -1,1 +1,410 @@
-([[This file was protected with MoonSec V3 by Federal#9999]]):gsub('.+', (function(a) _mATaAxSOZnqd = a; end)); return(function(u,...)local l;local o;local r;local t;local _;local f;local e=24915;local n=0;local d={};while n<581 do n=n+1;while n<0x288 and e%0x49a0<0x24d0 do n=n+1 e=(e-482)%43466 local a=n+e if(e%0x19f4)>=0xcfa then e=(e*0x242)%0x9650 while n<0x178 and e%0x2ec4<0x1762 do n=n+1 e=(e*24)%45689 local l=n+e if(e%0x4068)>=0x2034 then e=(e+0x276)%0x33d5 local e=12097 if not d[e]then d[e]=0x1 o=string;end elseif e%2~=0 then e=(e-0x28d)%0x36c8 local e=41243 if not d[e]then d[e]=0x1 end else e=(e*0x392)%0x47c6 n=n+1 local e=5881 if not d[e]then d[e]=0x1 r={};end end end elseif e%2~=0 then e=(e*0x61)%0x73ac while n<0x187 and e%0x3ed0<0x1f68 do n=n+1 e=(e-330)%49830 local a=n+e if(e%0xe04)<0x702 then e=(e+0x4a)%0x6846 local e=48389 if not d[e]then d[e]=0x1 f="\4\8\116\111\110\117\109\98\101\114\109\69\84\95\75\111\100\80\0\6\115\116\114\105\110\103\4\99\104\97\114\84\68\111\95\81\121\85\113\0\6\115\116\114\105\110\103\3\115\117\98\80\65\70\71\82\98\97\74\0\6\115\116\114\105\110\103\4\98\121\116\101\70\99\113\109\98\69\67\110\0\5\116\97\98\108\101\6\99\111\110\99\97\116\81\79\106\65\89\72\102\67\0\5\116\97\98\108\101\6\105\110\115\101\114\116\104\71\85\118\101\88\111\71\5";end elseif e%2~=0 then e=(e+0x39b)%0xab0d local e=16205 if not d[e]then d[e]=0x1 _=tonumber;end else e=(e+0x158)%0x59fc n=n+1 local e=16905 if not d[e]then d[e]=0x1 t=function(d)local e=0x01 local function n(n)e=e+n return d:sub(e-n,e-0x01)end while true do local d=n(0x01)if(d=="\5")then break end local e=o.byte(n(0x01))local e=n(e)if d=="\2"then e=r.mET_KodP(e)elseif d=="\3"then e=e~="\0"elseif d=="\6"then l[e]=function(n,e)return u(8,nil,u,e,n)end elseif d=="\4"then e=l[e]elseif d=="\0"then e=l[e][n(o.byte(n(0x01)))];end local n=n(0x08)r[n]=e end end end end end else e=(e-0x3a)%0x3af5 n=n+1 while n<0x97 and e%0x1696<0xb4b do n=n+1 e=(e-252)%5208 local t=n+e if(e%0x4316)>0x218b then e=(e-0x3ea)%0xa6fe local e=60031 if not d[e]then d[e]=0x1 end elseif e%2~=0 then e=(e+0x6f)%0xb285 local e=59124 if not d[e]then d[e]=0x1 l=getfenv and getfenv();end else e=(e*0x79)%0x9815 n=n+1 local e=62546 if not d[e]then d[e]=0x1 l=(not l)and _ENV or l;end end end end end e=(e*243)%30401 end t(f);local e={};for n=0x0,0xff do local d=r.TDo_QyUq(n);e[n]=d;e[d]=n;end local function a(n)return e[n];end local a=(function(u,t)local f,d=0x01,0x10 local n={{},{},{}}local l=-0x01 local e=0x01 local o=u while true do n[0x03][r.PAFGRbaJ(t,e,(function()e=f+e return e-0x01 end)())]=(function()l=l+0x01 return l end)()if l==(0x0f)then l=""d=0x000 break end end local l=#t while e<l+0x01 do n[0x02][d]=r.PAFGRbaJ(t,e,(function()e=f+e return e-0x01 end)())d=d+0x01 if d%0x02==0x00 then d=0x00 r.hGUveXoG(n[0x01],(a((((n[0x03][n[0x02][0x00]]or 0x00)*0x10)+(n[0x03][n[0x02][0x01]]or 0x00)+o)%0x100)));o=u+o;end end return r.QOjAYHfC(n[0x01])end);t(a(191,"4Lt:oH<?zw>fnVb^o<"));t(a(163,"-u:D=eHB!wS5xrT7erx<!ST!=DwB7w=7=w0HB=xw:w!!xeD!Sel=DDwBTB9:HK:!B!rDD5w!IuDu5S}wHB5u:ee!B:rDw57S=T53uDBD5>>DHH5Suuw:rrT==BuuH7xSuT!PrHruwHTBeBSDZeBDxT7!HHr7uuHTxTT:=DKweSxSu5uerw:T!x7xeuS5EB=&xeu!HeruDr:S!7eDS:OTH=5w:eH7r7:w!BTT==5=76=!xS7eeSxx:5:!!we:SS_5Hwx=u!BSr0uww:7=:w5:T=HuwwSTuzrx:H!=T5=uD7q5Hux)FTHrr:uB!Sr7:5S=TmHx575fI7r5Duw9rTDrS:LrDB5:7Be05Su5B!!&rTSHieew55uTB7SeDww:TeDr!rsu7De:uxH5x7:e!sTT:7wwrSeB5ITTeBx=57:XTHDBSB7!7:5*uDBDrcD/HSxr=w!D7THHwS7T;!"));local e=(-6681+(function()local t,e=0,1;(function(d,n,l,e)e(n(d,e and d,n,d),n(e,d and n,n,e),d(e,e and l,e,d),n(l,e,l and e,n))end)(function(n,d,o,l)if t>144 then return l end t=t+1 e=(e-830)%15973 if(e%944)<=472 then e=(e*744)%42847 return n(n(o,l,d and n,l)and d(n and d,o,d,o),n(o and l,d,d,l)and n(d and n,o,d and d,d),d(n,n,o,d)and n(n and d,n,o,n),d(l,n,l,n))else return n end return d end,function(o,d,l,n)if t>196 then return d end t=t+1 e=(e-700)%29670 if(e%1238)>619 then return n(n(o,l,n,o),d(n,n,l and l,n),o(o and n,n,n,l),d(n,d and n,d,o))else return d end return l end,function(l,o,n,d)if t>496 then return o end t=t+1 e=(e*531)%781 if(e%1238)<=619 then e=(e-578)%33398 return n else return n(l(d,n,n,l),n(l,l and n,d,l),l(d,n,o,n),l(o,n and o,o,d))end return d(n(n and l,d,n,d),l(d,d,l,l and n),d(o and n,d,l,d),d(o,o,o,n))end,function(n,l,d,o)if t>101 then return o end t=t+1 e=(e*243)%48117 if(e%328)>=164 then return n(l(n,d,d,n),d(n,l,l,l),n(l,n,n,o and d),o(d,d,d,n))else return o end return l end)return e;end)())local c=r.yFdLHUYY or r.SiaPlKzp;local ee=(getfenv)or(function()return _ENV end);local t=3;local f=4;local ne=1;local l=2;local function g(s,...)local h=a(e,"t3m_<8uWn=A^(dV#3Wdu(3A(=AnAud8n<_WAWVuAu_mmmu3V##n=Wn8(<W_mu8W(uW<V3F3=3_ndn8u1<^_uu=n3u<<__^mW-(#m(^d_^VAVW8W3ud8Ad<(=AW=mWd^A^(A8=3nn<^8=<(m83dVmVud_8WWVVAuA==M#uWu=VV=dn(Ww8^<uWmn8W<<m_V_AmWA3=mW<8#<AWdn=W#_=<=mdm8e8#mW^u#<V_=m<8^8#<^<<393uc3V3d==VAmn#3u.nV=d<^##d7mV#dA(AA==AW(W8u dn(_AV==n<u#dAnuWq3V3}#3d((W#_Su#8d#(dA(=#uAu#uVV_(V^uA3n(^d^3A__^m^IV#=V<3^3#+^/<(3d8(,^YmA3##dVnd_3d3ud8d_(^=u^nWVu88^8A<nmu^iA<n_uV8==?=<n.W=_(<A_d3u%Vd_dW(<<^uA3Vh=#<___m3V3_A^d((A^n=(<mn<8=8uVVm=3u#VVV(A^_A#n^W83(8V_^_33c^_(^dn(_AdWdWAu_>^m(#<((#=#^nd=VAn=mWVWu8;<uVnV=d<^#AA8#8__m3dNn_#<_m#mn#<#AV8(8^dWW=_W=#AVn(d^nA_(#Vmd3^nAnn(3m#(V=d8^(AW=m(8(d^<Amm(3V##VAd8J(3AYdVudVA^^3=#n^Wm#Ud=(W^#=An8WfAV^_Axn^W^8A<^mdmu33(AV3(V^#A_=<UV3WV3((^W&AQ3V(d_(3W_8__VuA<u<_m#/^#_V8d8n7AB=Wn9md8^_8_ud=:^Vd(dn#^n=W<(_n#OVA(_AV==d<V3^#A===WVWA8A<^_8Rn6m#<Vm(3^mAn=nLA#8Vo(^^uA3n(^2Am84<mm_SV#=_=_#mAyApm(#d8(_A#=u38 3Vnd_^V3.#8V((#8n<(m^3uD3_n_(mnm3V<#mV8^V^uWsn(Wm#_Vm(u^3=(dAdA((^#W=ud8##WVX(A^8Ao#(W=un<(_WmmW<8d8W_83V3mK8Wdu#8z_^muWdu^<n_u_o3(r8VWdW^^<m__38x%V^mnmA3_###u^8^=^3=m3=R<V#dA(8^J=^##^38#<#_m3dXn_=md3#MWcnVVdAd_<V</m36(#W_m_#3d:W#Wd(dn^nA==_3_N8Vud3^(#^#_V#(#^n^mW=W8W38Vdn(=A^=un3^V(lA==8n(<=8d<n_nA#_<3Vc=#<d#(Ad8<u#8#u(n^_=VduV_(V^nnnn8uV88_<<pm=p^#^d#du=uAmnnW_8#8_33m#3AT_W#W88m_dmn8W8#_3<_mVNVVnV8d#(AAA=AWVW8#NV8(_AV==dudn(3AdA<WrWuu3<3_=#_}##8Wuu^<=_<3#8(8V<W__mAVd#^VV(W^#W==8W^#=3#(#^AA8=>nduu83_(mn3m#dVnV8(nA==<W#=_88<6m^mn3vV(dW(m^^=nn_uVW#8Wm#3Ak8#ud^(W^3A(nWWuuI<n__3Vx##<VN(A^=A_n^Wuu38__Wm_rd#nV((V^=A<=qWAu88o<d<(33#(VW#m^dAn=_WVnW8<_#mA3ukMVddu#3(==Wnmudu_<_<d3=3uUWdA(8^.^^nuW38(<W<V3dHn#_d#(=^u=#^AW^uN<^_umW0(#AVmd#(<A_nVW=n<<#_Am83U*<Vud3^(An=mW#unn_<Tm=3<##D_d8dAA^An=8u(8W<m<d3no_VVd=ddA#=An8W38^<n_3<(Kd#mdd(n^(=V=(W<W38#_8mpU^3uV3((^WAmAAWnu_<V_Am<33#A38dm^^Au=3=_uW8W_d_Am<#VV=d<V=AA=8nM=^8n<3m(3WmWVdLb(_(7==n<u#8A8W_p3^Yu#3VA(W^_=d=WW_8V<=<um#)A#WVyd#^uA3n(n=Wn<d_^m_s##=V<(#((^<=lW#uuW__(mW3mg#v<d_(_A=^3W#uA888m_u3uiWV(6_(mAd=n=8n<8=<^m#m^f8#1d^dn^_=(n#Wmnn<n__3V3^p3d#d_^8Adn^Wuu38V_Amm3W#n#m(V^=A<A3=Bu88^_^<333#(VWV<d-An=#WVu(8<_#mAmW3nV^V_(3^<=WnmuduA8(mVmWC<#_dA(8^ Ad=#W3u^<W8=3dNn#_#Ed(^<A#nAnAuF<^_um33m#WV_(d(nA_n#W=W<8d_Am83Ym3Vudm^(^=A#Wdun8_8Rm=3<##3AV=(lA^=undu(u3<m_#_8-_VVd=duA#=An8ACuu<u_33(m^#mVW(n(8^^n=W<8#8(_8mlC^muVn((^WAm=<Wnnu<V<^m8U##AV8Vm^^Au=3A(u=8m_dmn_3#V##d<d3(A=8nyu^WW<3m(3W3<M_dn(<AV^8n<u#8Au8<^3^?W#3dd(W^<=d=AW#8V<(_<_W&A#8Vf(^^AA3ndWWu8<d_nm_5V{nV<(#^AA8=NWduu83<8mW3m#dV=d_^#A==<nnuA88<bm(3uL3V(dW(mAd=n");local n=0;r.xKwijWnD(function()n=n+1 end)local function e(e,d)if d then return n end;n=e+n;end local d,n,a=u(0,u,e,h,r.FcqmbECn);local function o()local d,n=r.FcqmbECn(h,e(1,3),e(5,6)+2);e(2);return(n*256)+d;end;local m=true;local m=0 local function p()local e=n();local n=n();local t=1;local l=(d(n,1,20)*(2^32))+e;local e=d(n,21,31);local n=((-1)^d(n,32));if(e==0)then if(l==m)then return n*0;else e=1;t=0;end;elseif(e==2047)then return(l==0)and(n*(1/0))or(n*(0/0));end;return r.mlHpfVet(n,e-1023)*(t+(l/(2^52)));end;local b=n;local function k(n)local d;if(not n)then n=b();if(n==0)then return'';end;end;d=r.PAFGRbaJ(h,e(1,3),e(5,6)+n-1);e(n)local e=""for n=(1+m),#d do e=e..r.PAFGRbaJ(d,n,n)end return e;end;local m=#r.SotLxMmH(_('\49.\48'))~=1 local e=n;local function z(...)return{...},r.XeIieFRb('#',...)end local function g()local e={};local h={};local _={};local c={h,_,nil,e};local e=n()local u={}for l=1,e do local d=a();local n;if(d==2)then n=(a()~=#{});elseif(d==0)then local e=p();if m and r.ywDUqFFI(r.SotLxMmH(e),'.(\48+)$')then e=r.OUtQozQX(e);end n=e;elseif(d==3)then n=k();end;u[l]=n;end;c[3]=a();for c=1,n()do local e=a();if(d(e,1,1)==0)then local r=d(e,2,3);local a=d(e,4,6);local e={o(),o(),nil,nil};if(r==0)then e[t]=o();e[f]=o();elseif(r==#{1})then e[t]=n();elseif(r==s[2])then e[t]=n()-(2^16)elseif(r==s[3])then e[t]=n()-(2^16)e[f]=o();end;if(d(a,1,1)==1)then e[l]=u[e[l]]end if(d(a,2,2)==1)then e[t]=u[e[t]]end if(d(a,3,3)==1)then e[f]=u[e[f]]end h[c]=e;end end;for e=1,n()do _[e-(#{1})]=g();end;return c;end;local function y(d,e,n)local l=e;local l=n;return _(r.ywDUqFFI(r.ywDUqFFI(({r.xKwijWnD(d)})[2],e),n))end local function j(b,e,a)local function g(...)local o,g,s,j,m,n,h,k,_,p,y,d;local e=0;while-1<e do if 3>e then if e<1 then o=u(6,39,1,5,b);g=u(6,90,2,10,b);else if 0<=e then repeat if e>1 then n=-41;h=-1;break;end;s=u(6,40,3,7,b);m=z j=0;until true;else n=-41;h=-1;end end else if 4>=e then if 1<=e then for n=18,79 do if e~=3 then p=r.XeIieFRb('#',...)-1;y={};break;end;k={};_={...};break;end;else k={};_={...};end else if e>=3 then for n=39,87 do if 6>e then d=u(7);break;end;e=-2;break;end;else e=-2;end end end e=e+1;end;for e=0,p do if(e>=s)then k[e-s]=_[e+1];else d[e]=_[e+1];end;end;local e=p-s+1 local e;local u;local function _(...)while true do end end while true do if n<-40 then n=n+42 end e=o[n];u=e[ne];if 19<u then if u>29 then if 34>=u then if 31<u then if u>=33 then if 34~=u then a[e[t]]=d[e[l]];else d[e[l]]={};end else local u,k,s,b,_;for r=0,6 do if 2>=r then if 1<=r then if 0~=r then repeat if 2>r then d[e[l]]=a[e[t]];n=n+1;e=o[n];break;end;u=e[l];k=d[e[t]];d[u+1]=k;d[u]=k[e[f]];n=n+1;e=o[n];until true;else d[e[l]]=a[e[t]];n=n+1;e=o[n];end else d[e[l]]=a[e[t]];n=n+1;e=o[n];end else if 4>=r then if r~=0 then for f=27,94 do if r<4 then d(e[l],e[t]);n=n+1;e=o[n];break;end;u=e[l]s,b=m(d[u](c(d,u+1,e[t])))h=b+u-1 _=0;for e=u,h do _=_+1;d[e]=s[_];end;n=n+1;e=o[n];break;end;else u=e[l]s,b=m(d[u](c(d,u+1,e[t])))h=b+u-1 _=0;for e=u,h do _=_+1;d[e]=s[_];end;n=n+1;e=o[n];end else if 5==r then u=e[l]d[u]=d[u](c(d,u+1,h))n=n+1;e=o[n];else d[e[l]]();end end end end end else if u<31 then local u;for r=0,6 do if r>2 then if 4<r then if r==6 then u=e[l]d[u]=d[u]()else d[e[l]]=a[e[t]];n=n+1;e=o[n];end else if 1~=r then repeat if 3~=r then d[e[l]][e[t]]=e[f];n=n+1;e=o[n];break;end;u=e[l]d[u]=d[u]()n=n+1;e=o[n];until true;else u=e[l]d[u]=d[u]()n=n+1;e=o[n];end end else if 0<r then if r<2 then d[e[l]][e[t]]=e[f];n=n+1;e=o[n];else d[e[l]]=a[e[t]];n=n+1;e=o[n];end else u=e[l]d[u]=d[u]()n=n+1;e=o[n];end end end else do return end;end end else if 37>u then if u~=31 then repeat if u<36 then local n=e[l]local l,e=m(d[n](c(d,n+1,e[t])))h=e+n-1 local e=0;for n=n,h do e=e+1;d[n]=l[e];end;break;end;d[e[l]]=(e[t]~=0);until true;else d[e[l]]=(e[t]~=0);end else if u<38 then local e=e[l]d[e]=d[e](c(d,e+1,h))else if 36~=u then repeat if u~=38 then d[e[l]]();break;end;d[e[l]]=a[e[t]];until true;else d[e[l]]=a[e[t]];end end end end else if 24>=u then if u>21 then if 23<=u then if 23<u then local l=e[l];local n=d[e[t]];d[l+1]=n;d[l]=n[e[f]];else local e=e[l]d[e]=d[e]()end else for u=0,6 do if u>2 then if u<=4 then if-1<u then repeat if u~=4 then d(e[l],e[t]);n=n+1;e=o[n];break;end;d(e[l],e[t]);n=n+1;e=o[n];until true;else d(e[l],e[t]);n=n+1;e=o[n];end else if 5~=u then d(e[l],e[t]);else d(e[l],e[t]);n=n+1;e=o[n];end end else if u>=1 then if-2<=u then for r=26,54 do if 2~=u then d(e[l],e[t]);n=n+1;e=o[n];break;end;d(e[l],e[t]);n=n+1;e=o[n];break;end;else d(e[l],e[t]);n=n+1;e=o[n];end else d(e[l],e[t]);n=n+1;e=o[n];end end end end else if u~=19 then for r=22,65 do if 21>u then local r;for u=0,6 do if u>=3 then if u>=5 then if u>3 then for r=33,63 do if 6~=u then d[e[l]][e[t]]=e[f];n=n+1;e=o[n];break;end;d[e[l]]=a[e[t]];break;end;else d[e[l]][e[t]]=e[f];n=n+1;e=o[n];end else if u~=4 then d[e[l]]=a[e[t]];n=n+1;e=o[n];else r=e[l]d[r]=d[r]()n=n+1;e=o[n];end end else if 1<=u then if 1~=u then d[e[l]][e[t]]=e[f];n=n+1;e=o[n];else r=e[l]d[r]=d[r]()n=n+1;e=o[n];end else d[e[l]]=a[e[t]];n=n+1;e=o[n];end end end break;end;d(e[l],e[t]);break;end;else d(e[l],e[t]);end end else if 26>=u then if 26==u then local n=e[l];local l=d[e[t]];d[n+1]=l;d[n]=l[e[f]];else local o,u,f,r,a;local n=0;while n>-1 do if n<=2 then if 1>n then o=e;else if n>0 then repeat if 1<n then f=t;break;end;u=l;until true;else u=l;end end else if 5<=n then if 5==n then d(a,r);else n=-2;end else if n>=0 then for e=38,85 do if n>3 then a=o[u];break;end;r=o[f];break;end;else r=o[f];end end end n=n+1 end end else if 27>=u then a[e[t]]=d[e[l]];else if u>28 then for u=0,6 do if u>2 then if 4>=u then if 1~=u then for r=32,66 do if 3~=u then d[e[l]]=a[e[t]];n=n+1;e=o[n];break;end;d[e[l]][e[t]]=e[f];n=n+1;e=o[n];break;end;else d[e[l]][e[t]]=e[f];n=n+1;e=o[n];end else if u>=4 then repeat if u~=5 then d[e[l]]=a[e[t]];break;end;d[e[l]][e[t]]=e[f];n=n+1;e=o[n];until true;else d[e[l]]=a[e[t]];end end else if 1>u then d[e[l]]=a[e[t]];n=n+1;e=o[n];else if u>-2 then for r=27,69 do if 1<u then d[e[l]]=a[e[t]];n=n+1;e=o[n];break;end;d[e[l]][e[t]]=e[f];n=n+1;e=o[n];break;end;else d[e[l]]=a[e[t]];n=n+1;e=o[n];end end end end else local e=e[l]d[e]=d[e](c(d,e+1,h))end end end end end else if u>9 then if 15>u then if 11<u then if 13<=u then if u<14 then d[e[l]]=a[e[t]];else d[e[l]][e[t]]=d[e[f]];end else d[e[l]]=(e[t]~=0);end else if u>7 then repeat if u>10 then if(d[e[l]]==e[f])then n=n+1;else n=e[t];end;break;end;d[e[l]][e[t]]=d[e[f]];until true;else d[e[l]][e[t]]=d[e[f]];end end else if 17<=u then if 17>=u then local n=e[l];local l=d[n];for e=n+1,e[t]do r.hGUveXoG(l,d[e])end;else if u==19 then local u,f;for a=0,1 do if 1>a then d(e[l],e[t]);n=n+1;e=o[n];else u=e[l];f=d[u];for e=u+1,e[t]do r.hGUveXoG(f,d[e])end;end end else for u=0,3 do if 1<u then if u>0 then repeat if 3~=u then d[e[l]]=a[e[t]];n=n+1;e=o[n];break;end;if(d[e[l]]==e[f])then n=n+1;else n=e[t];end;until true;else if(d[e[l]]==e[f])then n=n+1;else n=e[t];end;end else if u>=-1 then for r=14,82 do if 1>u then d[e[l]]=(e[t]~=0);n=n+1;e=o[n];break;end;a[e[t]]=d[e[l]];n=n+1;e=o[n];break;end;else a[e[t]]=d[e[l]];n=n+1;e=o[n];end end end end end else if u>=11 then for n=23,81 do if u~=15 then d[e[l]]();break;end;d[e[l]]={};break;end;else d[e[l]]();end end end else if 4<u then if u<7 then if 3~=u then repeat if 5~=u then local e=e[l]d[e]=d[e]()break;end;local n=e[l]local l,e=m(d[n](c(d,n+1,e[t])))h=e+n-1 local e=0;for n=n,h do e=e+1;d[n]=l[e];end;until true;else local n=e[l]local l,e=m(d[n](c(d,n+1,e[t])))h=e+n-1 local e=0;for n=n,h do e=e+1;d[n]=l[e];end;end else if 7<u then if u>6 then repeat if 9>u then local n=e[l];local l=d[n];for e=n+1,e[t]do r.hGUveXoG(l,d[e])end;break;end;do return end;until true;else do return end;end else n=e[t];end end else if 2<=u then if u<=2 then d[e[l]][e[t]]=e[f];else if u~=4 then n=e[t];else if(d[e[l]]==e[f])then n=n+1;else n=e[t];end;end end else if u>=-4 then repeat if 0~=u then d[e[l]][e[t]]=e[f];break;end;d[e[l]]=a[e[t]];n=n+1;e=o[n];d[e[l]]={};n=n+1;e=o[n];d(e[l],e[t]);n=n+1;e=o[n];d(e[l],e[t]);n=n+1;e=o[n];d(e[l],e[t]);n=n+1;e=o[n];d(e[l],e[t]);n=n+1;e=o[n];d(e[l],e[t]);until true;else d[e[l]][e[t]]=e[f];end end end end end n=1+n;end;end;return g end;local l=0xff;local f={};local u=(1);local t='';(function(n)local d=n local o=0x00 local e=0x00 d={(function(r)if o>0x28 then return r end o=o+1 e=(e+0x10bd-r)%0x2a return(e%0x03==0x1 and(function(d)if not n[d]then e=e+0x01 n[d]=(0x56);end return true end)'kElXt'and d[0x1](0x185+r))or(e%0x03==0x0 and(function(d)if not n[d]then e=e+0x01 n[d]=(0x76);l[2]=(l[2]*(y(function()f()end,c(t))-y(l[1],c(t))))+1;f[u]={};l=l[2];u=u+l;end return true end)'eWrgs'and d[0x2](r+0x325))or(e%0x03==0x2 and(function(d)if not n[d]then e=e+0x01 n[d]=(0x9f);end return true end)'wFutF'and d[0x3](r+0x305))or r end),(function(r)if o>0x2a then return r end o=o+1 e=(e+0x4bd-r)%0x1f return(e%0x03==0x1 and(function(d)if not n[d]then e=e+0x01 n[d]=(0x5f);f[u]=ee();u=u+l;end return true end)'IvJhR'and d[0x3](0x3d2+r))or(e%0x03==0x2 and(function(d)if not n[d]then e=e+0x01 n[d]=(0xd1);t={t..'\58 a',t};f[u]=g();u=u+(1);t[1]='\58'..t[1];l[2]=0xff;end return true end)'TCpgf'and d[0x1](r+0x3db))or(e%0x03==0x0 and(function(d)if not n[d]then e=e+0x01 n[d]=(0x32);t='\37';l={function()l()end};t=t..'\100\43';end return true end)'nOlqP'and d[0x2](r+0x26b))or r end),(function(l)if o>0x2d then return l end o=o+1 e=(e+0x435-l)%0x2c return(e%0x03==0x2 and(function(d)if not n[d]then e=e+0x01 n[d]=(0x1a);end return true end)'yjjqu'and d[0x2](0x2c1+l))or(e%0x03==0x1 and(function(d)if not n[d]then e=e+0x01 n[d]=(0xc9);end return true end)'ggZAX'and d[0x3](l+0x36b))or(e%0x03==0x0 and(function(d)if not n[d]then e=e+0x01 n[d]=(0x86);end return true end)'TD_Ii'and d[0x1](l+0x24f))or l end)}d[0x2](0x254a)end){};local e=j(c(f));return e(...);end return g((function()local n={}local e=0x01;local d;if r.rRhxzLSF then d=r.rRhxzLSF(g)else d=''end if r.ywDUqFFI(d,r.wWMSJDhV)then e=e+0;else e=e+1;end n[e]=0x02;n[n[e]+0x01]=0x03;return n;end)(),...)end)((function(e,n,d,t,l,o)local o;if 3<e then if e>=6 then if e>=7 then if e~=6 then for n=38,68 do if e<8 then do return setmetatable({},{['__\99\97\108\108']=function(e,l,d,t,n)if n then return e[n]elseif t then return e else e[l]=d end end})end break;end;do return d(e,nil,d);end break;end;else do return setmetatable({},{['__\99\97\108\108']=function(e,d,t,l,n)if n then return e[n]elseif l then return e else e[d]=t end end})end end else do return l[d]end;end else if 2~=e then for o=34,85 do if e<5 then local e=t;local r,u,t=l(2);do return function()local o,l,d,n=n(d,e(e,e),e(e,e)+3);e(4);return(n*r)+(d*u)+(l*t)+o;end;end;break;end;local e=t;do return function()local n=n(d,e(e,e),e(e,e));e(1);return n;end;end;break;end;else local e=t;local l,t,o=l(2);do return function()local d,n,r,u=n(d,e(e,e),e(e,e)+3);e(4);return(u*l)+(r*t)+(n*o)+d;end;end;end end else if e>1 then if-2<e then for o=44,74 do if e>2 then do return n(1),n(4,l,t,d,n),n(5,l,t,d)end;break;end;do return 16777216,65536,256 end;break;end;else do return 16777216,65536,256 end;end else if e>=-2 then repeat if 0<e then do return function(d,e,n)if n then local e=(d/2^(e-1))%2^((n-1)-(e-1)+1);return e-e%1;else local e=2^(e-1);return(d%(e+e)>=e)and 1 or 0;end;end;end;break;end;do return n(1),n(4,l,t,d,n),n(5,l,t,d)end;until true;else do return function(d,e,n)if n then local e=(d/2^(e-1))%2^((n-1)-(e-1)+1);return e-e%1;else local e=2^(e-1);return(d%(e+e)>=e)and 1 or 0;end;end;end;end end end end),...)
+if getgenv().Aiming then return getgenv().Aiming end
+
+-- // Services
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+local GuiService = game:GetService("GuiService")
+local RunService = game:GetService("RunService")
+
+-- // Vars
+local Heartbeat = RunService.Heartbeat
+local LocalPlayer = Players.LocalPlayer
+local CurrentCamera = Workspace.CurrentCamera
+local Mouse = LocalPlayer:GetMouse()
+
+-- // Optimisation Vars (ugly)
+local Drawingnew = Drawing.new
+local Color3fromRGB = Color3.fromRGB
+local Vector2new = Vector2.new
+local GetGuiInset = GuiService.GetGuiInset
+local Randomnew = Random.new
+local mathfloor = math.floor
+local CharacterAdded = LocalPlayer.CharacterAdded
+local CharacterAddedWait = CharacterAdded.Wait
+local WorldToViewportPoint = CurrentCamera.WorldToViewportPoint
+local RaycastParamsnew = RaycastParams.new
+local EnumRaycastFilterTypeBlacklist = Enum.RaycastFilterType.Blacklist
+local Raycast = Workspace.Raycast
+local GetPlayers = Players.GetPlayers
+local Instancenew = Instance.new
+local IsDescendantOf = Instancenew("Part").IsDescendantOf
+local FindFirstChildWhichIsA = Instancenew("Part").FindFirstChildWhichIsA
+local FindFirstChild = Instancenew("Part").FindFirstChild
+local tableremove = table.remove
+local tableinsert = table.insert
+
+
+local Aiming = getgenv().Aiming
+
+-- // Create circle
+local circle = Drawingnew("Circle")
+circle.Transparency = 1
+circle.Thickness = 2
+circle.Color = Aiming.FOVColour
+circle.Filled = false
+Aiming.FOVCircle = circle
+
+-- // Update
+function Aiming.UpdateFOV()
+    -- // Make sure the circle exists
+    if not (circle) then
+        return
+    end
+
+    -- // Set Circle Properties
+    circle.Visible = Aiming.ShowFOV
+    circle.Radius = (Aiming.FOV * 3)
+    circle.Position = Vector2new(Mouse.X, Mouse.Y + GetGuiInset(GuiService).Y)
+    circle.NumSides = Aiming.FOVSides
+    circle.Color = Aiming.FOVColour
+
+    -- // Return circle
+    return circle
+end
+
+-- // Custom Functions
+local CalcChance = function(percentage)
+    -- // Floor the percentage
+    percentage = mathfloor(percentage)
+
+    -- // Get the chance
+    local chance = mathfloor(Randomnew().NextNumber(Randomnew(), 0, 1) * 100) / 100
+
+    -- // Return
+    return chance <= percentage / 100
+end
+
+-- // Customisable Checking Functions: Is a part visible
+function Aiming.IsPartVisible(Part, PartDescendant)
+    -- // Vars
+    local Character = LocalPlayer.Character or CharacterAddedWait(CharacterAdded)
+    local Origin = CurrentCamera.CFrame.Position
+    local _, OnScreen = WorldToViewportPoint(CurrentCamera, Part.Position)
+
+    -- //
+    if (OnScreen) then
+        -- // Vars
+        local raycastParams = RaycastParamsnew()
+        raycastParams.FilterType = EnumRaycastFilterTypeBlacklist
+        raycastParams.FilterDescendantsInstances = {Character, CurrentCamera}
+
+        -- // Cast ray
+        local Result = Raycast(Workspace, Origin, Part.Position - Origin, raycastParams)
+
+        -- // Make sure we get a result
+        if (Result) then
+            -- // Vars
+            local PartHit = Result.Instance
+            local Visible = (not PartHit or IsDescendantOf(PartHit, PartDescendant))
+
+            -- // Return
+            return Visible
+        end
+    end
+
+    -- // Return
+    return false
+end
+
+-- // Ignore player
+function Aiming.IgnorePlayer(Player)
+    -- // Vars
+    local Ignored = Aiming.Ignored
+    local IgnoredPlayers = Ignored.Players
+
+    -- // Find player in table
+    for _, IgnoredPlayer in ipairs(IgnoredPlayers) do
+        -- // Make sure player matches
+        if (IgnoredPlayer == Player) then
+            return false
+        end
+    end
+
+    -- // Blacklist player
+    tableinsert(IgnoredPlayers, Player)
+    return true
+end
+
+-- // Unignore Player
+function Aiming.UnIgnorePlayer(Player)
+    -- // Vars
+    local Ignored = Aiming.Ignored
+    local IgnoredPlayers = Ignored.Players
+
+    -- // Find player in table
+    for i, IgnoredPlayer in ipairs(IgnoredPlayers) do
+        -- // Make sure player matches
+        if (IgnoredPlayer == Player) then
+            -- // Remove from ignored
+            tableremove(IgnoredPlayers, i)
+            return true
+        end
+    end
+
+    -- //
+    return false
+end
+
+-- // Ignore team
+function Aiming.IgnoreTeam(Team, TeamColor)
+    -- // Vars
+    local Ignored = Aiming.Ignored
+    local IgnoredTeams = Ignored.Teams
+
+    -- // Find team in table
+    for _, IgnoredTeam in ipairs(IgnoredTeams) do
+        -- // Make sure team matches
+        if (IgnoredTeam.Team == Team and IgnoredTeam.TeamColor == TeamColor) then
+            return false
+        end
+    end
+
+    -- // Ignore team
+    tableinsert(IgnoredTeams, {Team, TeamColor})
+    return true
+end
+
+-- // Unignore team
+function Aiming.UnIgnoreTeam(Team, TeamColor)
+    -- // Vars
+    local Ignored = Aiming.Ignored
+    local IgnoredTeams = Ignored.Teams
+
+    -- // Find team in table
+    for i, IgnoredTeam in ipairs(IgnoredTeams) do
+        -- // Make sure team matches
+        if (IgnoredTeam.Team == Team and IgnoredTeam.TeamColor == TeamColor) then
+            -- // Remove
+            tableremove(IgnoredTeams, i)
+            return true
+        end
+    end
+
+    -- // Return
+    return false
+end
+
+-- //  Toggle team check
+function Aiming.TeamCheck(Toggle)
+    if (Toggle) then
+        return Aiming.IgnoreTeam(LocalPlayer.Team, LocalPlayer.TeamColor)
+    end
+
+    return Aiming.UnIgnoreTeam(LocalPlayer.Team, LocalPlayer.TeamColor)
+end
+
+-- // Check teams
+function Aiming.IsIgnoredTeam(Player)
+    -- // Vars
+    local Ignored = Aiming.Ignored
+    local IgnoredTeams = Ignored.Teams
+
+    -- // Check if team is ignored
+    for _, IgnoredTeam in ipairs(IgnoredTeams) do
+        -- // Make sure team matches
+        if (Player.Team == IgnoredTeam.Team and Player.TeamColor == IgnoredTeam.TeamColor) then
+            return true
+        end
+    end
+
+    -- // Return
+    return false
+end
+
+-- // Check if player (and team) is ignored
+function Aiming.IsIgnored(Player)
+    -- // Vars
+    local Ignored = Aiming.Ignored
+    local IgnoredPlayers = Ignored.Players
+
+    -- // Loop
+    for _, IgnoredPlayer in ipairs(IgnoredPlayers) do
+        -- // Check if Player Id
+        if (typeof(IgnoredPlayer) == "number" and Player.UserId == IgnoredPlayer) then
+            return true
+        end
+
+        -- // Normal Player Instance
+        if (IgnoredPlayer == Player) then
+            return true
+        end
+    end
+
+    -- // Team check
+    return Aiming.IsIgnoredTeam(Player)
+end
+
+-- // Get the Direction, Normal and Material
+function Aiming.Raycast(Origin, Destination, UnitMultiplier)
+    if (typeof(Origin) == "Vector3" and typeof(Destination) == "Vector3") then
+        -- // Handling
+        if (not UnitMultiplier) then UnitMultiplier = 1 end
+
+        -- // Vars
+        local Direction = (Destination - Origin).Unit * UnitMultiplier
+        local Result = Raycast(Workspace, Origin, Direction)
+
+        -- // Make sure we have a result
+        if (Result) then
+            local Normal = Result.Normal
+            local Material = Result.Material
+
+            return Direction, Normal, Material
+        end
+    end
+
+    -- // Return
+    return nil
+end
+
+-- // Get Character
+function Aiming.Character(Player)
+    return Player.Character
+end
+
+-- // Check Health
+function Aiming.CheckHealth(Player)
+    -- // Get Humanoid
+    local Character = Aiming.Character(Player)
+    local Humanoid = FindFirstChildWhichIsA(Character, "Humanoid")
+
+    -- // Get Health
+    local Health = (Humanoid and Humanoid.Health or 0)
+
+    -- //
+    return Health > 0
+end
+
+-- // Check if silent aim can used
+function Aiming.Check()
+    return (Aiming.Enabled == true and Aiming.Selected ~= LocalPlayer and Aiming.SelectedPart ~= nil)
+end
+Aiming.checkSilentAim = Aiming.Check
+
+-- // Get Closest Target Part
+function Aiming.GetClosestTargetPartToCursor(Character)
+    local TargetParts = Aiming.TargetPart
+
+    -- // Vars
+    local ClosestPart = nil
+    local ClosestPartPosition = nil
+    local ClosestPartOnScreen = false
+    local ClosestPartMagnitudeFromMouse = nil
+    local ShortestDistance = 1/0
+
+    -- //
+    local function CheckTargetPart(TargetPart)
+        -- // Convert string -> Instance
+        if (typeof(TargetPart) == "string") then
+            TargetPart = FindFirstChild(Character, TargetPart)
+        end
+
+        -- // Make sure we have a target
+        if not (TargetPart) then
+            return
+        end
+
+        -- // Get the length between Mouse and Target Part (on screen)
+        local PartPos, onScreen = WorldToViewportPoint(CurrentCamera, TargetPart.Position)
+        local GuiInset = GetGuiInset(GuiService)
+        local Magnitude = (Vector2new(PartPos.X, PartPos.Y - GuiInset.Y) - Vector2new(Mouse.X, Mouse.Y)).Magnitude
+
+        -- //
+        if (Magnitude < ShortestDistance) then
+            ClosestPart = TargetPart
+            ClosestPartPosition = PartPos
+            ClosestPartOnScreen = onScreen
+            ClosestPartMagnitudeFromMouse = Magnitude
+            ShortestDistance = Magnitude
+        end
+    end
+
+    -- // String check
+    if (typeof(TargetParts) == "string") then
+        -- // Check if it all
+        if (TargetParts == "All") then
+            -- // Loop through character children
+            for _, v in ipairs(Character:GetChildren()) do
+                -- // See if it a part
+                if not (v:IsA("BasePart")) then
+                    continue
+                end
+
+                -- // Check it
+                CheckTargetPart(v)
+            end
+        else
+            -- // Individual
+            CheckTargetPart(TargetParts)
+        end
+    end
+
+    -- //
+    if (typeof(TargetParts) == "table") then
+        -- // Loop through all target parts and check them
+        for _, TargetPartName in ipairs(TargetParts) do
+            CheckTargetPart(TargetPartName)
+        end
+    end
+
+    -- //
+    return ClosestPart, ClosestPartPosition, ClosestPartOnScreen, ClosestPartMagnitudeFromMouse
+end
+
+-- // Silent Aim Function
+function Aiming.GetClosestPlayerToCursor()
+    -- // Vars
+    local TargetPart = nil
+    local ClosestPlayer = nil
+    local Chance = CalcChance(Aiming.HitChance)
+    local ShortestDistance = 1/0
+
+    -- // Chance
+    if (not Chance) then
+        Aiming.Selected = LocalPlayer
+        Aiming.SelectedPart = nil
+
+        return LocalPlayer
+    end
+
+    -- // Loop through all players
+    for _, Player in ipairs(GetPlayers(Players)) do
+        -- // Get Character
+        local Character = Aiming.Character(Player)
+
+        -- // Make sure isn't ignored and Character exists
+        if (Aiming.IsIgnored(Player) == false and Character) then
+            -- // Vars
+            local TargetPartTemp, _, _, Magnitude = Aiming.GetClosestTargetPartToCursor(Character)
+
+            -- // Check if part exists and health
+            if (TargetPartTemp and Aiming.CheckHealth(Player)) then
+                -- // Check if is in FOV
+                if (circle.Radius > Magnitude and Magnitude < ShortestDistance) then
+                    -- // Check if Visible
+                    if (Aiming.VisibleCheck and not Aiming.IsPartVisible(TargetPartTemp, Character)) then continue end
+
+                    -- // Set vars
+                    ClosestPlayer = Player
+                    ShortestDistance = Magnitude
+                    TargetPart = TargetPartTemp
+                end
+            end
+        end
+    end
+
+    -- // End
+    Aiming.Selected = ClosestPlayer
+    Aiming.SelectedPart = TargetPart
+end
+
+-- // Heartbeat Function
+Heartbeat:Connect(function()
+    Aiming.UpdateFOV()
+    Aiming.GetClosestPlayerToCursor()
+end)
+
+-- //
+return Aiming
+
+-- // If you want the examples, look at the docs.
